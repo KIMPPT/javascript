@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="title">
+        ID를 통해 내용을 작성합니다
+    </h1>
+    <input type="text" id="input1" value="안녕" name="input2">
     <script>
         let hi="hello world";
         let num1=400;
@@ -44,6 +48,17 @@
         console.log("sumnum",sumNum);
         sumNum--;
         console.log("sumnum",sumNum);
+        /*콘솔 또는 HTML에 출력하기 위한 입력*/
+        console.log("콘솔에 내용을 출력합니다");
+        alert("경고창에 내용 출력");
+        document.getElementById('title').innerHTML="ID를 통해 태그를 찾고 값을 할당 할 수 있다";
+        //값을 입력하는 방법
+        let name=prompt("안녕"); //창을 띄워서 입력칸을 만들어 값 가져오기
+        console.log(name);
+        let input1 = document.getElementById('input1').value; //ID를 통해서 input 태그에 있는 value 값 가져오기
+        console.log(input1);
+        let input2 = document.getElementsByName('?input2').value;
+        console.log(input2);
     </script>
 </body>
 </html>
