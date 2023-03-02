@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hi="hello world";
+        let num1=400;
+        let num2=30;
+        let currentHumidity=70;//현재습도
+        let rainHumidity=65//비올 때 습도
+        let isRain=currentHumidity>rainHumidity;
+        //복합대입연산자
+        let sum1=0;
+        console.log(sum1);
+        //현재 변수에 1을 더해줄 때
+        sum1=sum1+1; //sum1=1;
+        console.log(sum1);
+        //복합대입연산자 사용 시
+        sum1+=2; //sum1=3;
+        console.log(sum1);
+        //증감연산자 : 1씩 증가 or 1씩 감소
+        let a=1;
+        let b=0,c=0;
+        //실행순서 : b의 경우 a의 값이 먼저 b에 씌워진 후 a의 값에 1 증가
+        b=a++;
+        //실행순서 : c의 경우 a의 값에 1이 먼저 증가 후 그 값이 c에 씌임
+        c=++a;
+        console.log(a,b,c);
+        let d=0;
+        d=b/c++;
+        console.log(a,b,c,d);
+        let sumNum=0;
+        sumNum+=1;
+        console.log(sumNum);
+        sumNum++;
+        console.log(sumNum);
+        ++sumNum;
+        console.log(sumNum);
+    </script>
+</body>
+</html>
