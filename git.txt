@@ -1,0 +1,4 @@
+git remote add (특정이름) github주소
+만약 잘못 입력한 경우
+git remote remove (위에 지정된 특정이름)
+을 입력하면 설정이 지워짐
