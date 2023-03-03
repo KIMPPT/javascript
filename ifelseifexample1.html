@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if-else if 조건문 실습</title>
 </head>
+
 <body>
     <input type="range" name="" id="dust" max="200">
     <label for="">의미없는 바</label>
     <script>
-        let dust=prompt('미세먼지수치를 입력하세요');
+        let dust = prompt('미세먼지수치를 입력하세요');
         //let dust=document.getElementById('dust').value;
-        if(dust<30){
+        if (dust < 30) {
             document.write('좋음');
         }
-        else if(dust<80){
+        else if (dust < 80) {
             document.write('보통');
         }
-        else if(dust<150){
+        else if (dust < 150) {
             document.write('나쁨');
         }
-        else{
+        else {
             document.write('매우나쁨');
         }
-        let mathScore=prompt('수학점수를 입력하세요');
+        document.write('<hr>');
+        let mathScore = prompt('수학점수를 입력하세요');
+        if (mathScore >= 90) {
+            document.write('점수 : A');
+        }
+        else if (mathScore >= 80) {
+            document.write('점수 : B');
+        }
+        else if (mathScore >= 70) {
+            document.write('점수 : C'); 
+        }
+        else {
+            document.write('점수 : F');
+        }
+/* if문으로만 작성할 경우
+if(mathScore>=70){
+    if(mathScore>=80){
         if(mathScore>=90){
             document.write('점수 : A');
         }
-        else if(mathScore>=80){
-            document.write('점수 : B');
-        }
-        else if(mathScore>=70)
-        {document.write('점수 : C');}
-        else{
-            document.write('점수 : F');
-        }
+    document.write('점수 : B');
+    }
+document.write('점수 : C');
+}
+else{document.write('점수 : F')}
+라고 써야 한다
+또는
+if(mathScore>=90){
+    document.write('점수 : A');
+}
+if(mathScore<90 && mathScore>=80){
+    document.write('점수 : B');
+}
+if(mathScore<80 && mathScore>=70){
+    document.write('점수 : C');
+}
+if(mathScore<70){
+    document.write('점수 : F');
+}
+*/
+
     </script>
 </body>
+
 </html>
