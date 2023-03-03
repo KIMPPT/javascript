@@ -10,12 +10,17 @@
     <p id="write"></p>
     <script>
         //나이 입력받음
-        let year=prompt('본인의 생년을 입력해주세요');
-        let age=2023-year+1;
-        document.getElementById("write").innerHTML='현재 나이는'+age+'세 입니다.';
+        let year=prompt('본인의 생년을 입력해주세요','1980');
+        //year 값은 숫자를 입력해줘도 문자열로 들어간다
+        year=Number(year);
+        let age=2023-year;
+        document.querySelector("#write").innerHTML
+        ='현재 나이는 '+age+'세 입니다.';
         //숫자값인지 아닌지 콘솔에 출력
-        let qna=(age>0);
-        console.log(qna);
+        let qna=(age>0);//나이값이 숫자인지 아닌지 판별
+        console.log(qna); //콘솔에 참/거짓 출력
+        let qna2=!(isNaN(year)); //isNaN라는 함수를 통해 숫자인지 아닌지 판별
+        console.log(qna2);
     </script>
 </body>
 </html>
