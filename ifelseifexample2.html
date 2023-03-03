@@ -9,7 +9,7 @@
 <body>
     
     <script>
-        let number=4532;
+        let number=456789232;
         if(number%2==0)
         {document.write('<p>짝수입니다</p>');}
         else
@@ -17,16 +17,16 @@
         if(number<0)
         {document.write('<p>음수입니다</p>');}
         else if(number==0)
-        {document.write('<p>0입니다</p>')}
+        {document.write('<p>0입니다</p>');}
         else
-        {document.write('<p>양수입니다</p>')}
-        let price=1234;
+        {document.write('<p>양수입니다</p>');}
+        let price=123485;
         if(price>=100000)
-        {document.write('<p>할인율 : 20%</p>');}
+        {document.write(`<p>할인금액 : ${price*0.8}</p>`);}
         else if(price>=50000)
-        {document.write('<p>할인율 : 10%</p>');}
+        {document.write(`<p>할인금액 : ${price*0.9}/p>`);}
         else if(price>=10000)
-        {document.write('<p>할인율 : 5%</p>');}
+        {document.write(`<p>할인금액 : ${price*0.95}</p>`);}
         else{}
 
     </script>
