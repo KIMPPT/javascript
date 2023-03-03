@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>점수결과</title>
+</head>
+<body>
+    <h1>
+        점수결과 입니다.
+    </h1>
+    <p id="result"></p>
+    <script>
+        //점수 입력받기
+        let pnp=prompt('점수를 입력해주세요');
+        //pnp=Number(pnp); //문자열을 숫자로 변환. +를 제외하면 쓰지 않아도 됨
+        let result=(pnp>=60); //점수값 비교 : 60점 이상인가?
+        document.getElementById('result').innerHTML=result; //출력
+    </script>
+</body>
+</html>
