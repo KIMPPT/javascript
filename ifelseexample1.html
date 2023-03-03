@@ -22,6 +22,38 @@
         else{
             document.write('<p>걸어갑니다</p>');
         }
+        document.write('<hr>');
+        document.write('<h1>if중첩조건문</h1>');
+        //조건이 여러 개가 있을 때 if 문 안에 if 문을 사용 할 수 있다
+        let subwayuse=true;
+        let bususe=false;
+        if(subwayuse==false){
+            //지하철을 사용 못할 때
+            if(bususe==false){
+                //지하철을 사용 못하면서 동시에 버스도 사용 하지 못할 때
+                document.write('택시 사용');
+            }
+            //지하철은 사용 못하지만 버스는 사용 가능 할 때
+            else{
+                document.write('버스 사용');
+            }
+        }
+        else{
+            //지하철이 사용 가능 할 때
+            document.write('지하철 사용');
+            
+        }
+        document.write('<hr>');
+        document.write('<h1>if-else if 중첩문</h1>');
+        if(subwayuse==true){
+            document.write('지하철 사용');
+        }
+        else if(bususe==true){
+            document.write('버스 사용');
+        }
+        else{
+            document.write('택시 사용');
+        }
     </script>
 </body>
 </html>
