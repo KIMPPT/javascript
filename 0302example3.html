@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합문제1</title>
+</head>
+<body>
+    <h1 id="welcome">
+        NN님 오신 것을 환영압니다
+    </h1>
+    <p>
+        홈페이지에 오신 것을 환영합니다
+    </p>
+    <input type="text" name="ABC" id="" value="마트">
+    <script>
+        let nickname=prompt('닉네임을 입력해주세요'); //변수선언,입력값받음
+        document.getElementById('welcome').innerHTML=nickname+'님 오신 것을 환영합니다'; 
+        //입력받은 값을 html id 값을 찾아 새롭게 출력
+        document.querySelector('#welcome+p').innerHTML='querySelector를 이용'
+        //querySelector의 경우 CSS선택자를 사용
+        let mart=document.getElementsByName('ABC').value;
+        let mart2=document.querySelector('.ABC').value;
+        document.write(mart);
+        document.write(mart2);
+    </script>
+</body>
+</html>
