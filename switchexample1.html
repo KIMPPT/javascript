@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch조건문 실습</title>
+</head>
+<body>
+    <script>
+        let score=prompt('점수값을 넣으세요(대문자A,B,C,D 중 하나)');
+        switch(score){
+            case'A':document.write('<p>참잘했습니다</p>');
+            break;
+            case'B':document.write('<p>잘했습니다</p>');
+            break;
+            case'C':document.write('<p>아쉽습니다</p>');
+            break;
+            case'D':document.write('<p>분발하세요</p>');
+            break;
+            default:document.write('<p>잘못된 점수입니다</p>');
+        }
+    </script>
+</body>
+</html>
