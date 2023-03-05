@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력/출력</title>
+</head>
+<body>
+    <p id="in3">원본</p>
+    <input type="text" name="" id="in" value="ABC">
+    <script>
+        let in1=prompt('단어를 입력하세요'); // 크롬 창에 따로 띄움
+        let in2=document.getElementById('in').value; // id의 이름이 in인 태그의 값을 따옴
+        alert(in1); //크롬 창에 따로 나옴
+        document.write(in2);//in2의 내용을 html에 출력시킴
+        document.getElementById('in3').innerHTML='I have a dream'; // id의 이름이 in3인 태그의 값에 해당 값을 덮어버림
+
+    </script>
+</body>
+</html>
