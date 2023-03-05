@@ -4,4 +4,12 @@ git remote remove (위에 지정된 특정이름)
 을 입력하면 설정이 지워짐
 
 document.querySelector('').innerHTML
-문서(document)에서 선택자를 사용하여(querySelector) id 값이 a인 ("#a") "또는 name 값이 b인(".b")태그를 선택하고 HTML에 삽입한다(innerHTML)
+문서(document)에서 선택자를 사용하여(querySelector) id 값이 a인 ("#a") 태그를 선택하고 HTML에 삽입한다(innerHTML)
+
+입력 방법[택1]
+1. prompt(); - 이 방법은 경고창에 띄우는 방식이다
+2. document.getElementById('').value - 위 설명의 입력 버전. value(값)을 입력받는 형태이다
+출력 방법[택1]
+1. document.write() - html에 직접 출력하는 방식
+2. alert() - prompt의 출력버전
+2. document.getElementById(').innerHTML -
