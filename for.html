@@ -11,6 +11,14 @@
         //형태 : for(초기조건;끝날조건;카운트변수){조건을 만족할 때 실행할 코드}
         for(let i=1;i<=5;i++)
         {document.write(`<p>${i}번째 줄입니다</p>`);}
+        //for in 배열 부분 : 배열의 요소갯수 만큼 반복
+        let num=[2,34,567,8910,123456];
+        for(i in num){
+            document.write(`${num[i]}`);
+        }
+        for(element of num){
+            document.write(num[i]+',');
+        }
     </script>
 </body>
 </html>
