@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건식과 논리연산자</title>
+</head>
+<body>
+    <p id="energy"></p>
+    <script>
+        //논리연산자(조건식을 계산)
+        //조건문에서 조건식을 연결해서 사용 할 때 사용
+        // ||(or) , &&(and)
+        // ||의 경우 여러 조건 중 1개라도 만족하면 true
+        // &&의 경우 여러 조건 중 1개라도 만족하지 못하면 false
+        let money=confirm('현금을 가지고 있습니까?');
+        let card=confirm('교통카드를 가지고 있습니까?');
+        if( money==true||card==true)
+        {document.write('<p>버스를 탈 수 있다</p>');}
+        else{document.write('<p>버스를 탈 수 없다</p>');}
+        document.getElementById('energy').innerHTML=('<h1>gha</h1>');
+        let x=prompt('숫자를 입력하세요');
+        x=Number(x);
+        if(x>=100 && x<1000)
+        {document.write(x+'는 3자리 자연수 입니다');}
+        // ||와 && 혼합사용. 우선순위가 없기 때문에 적힌 순서대로 계산함
+        let a=confirm('메세지');
+        document.write(a);
+    </script>
+</body>
+</html>

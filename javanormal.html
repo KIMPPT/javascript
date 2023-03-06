@@ -10,9 +10,40 @@
 
 <body>
     <script>
-        let sum = 1+2+3;
-        document.write(sum);
-        
+        let month = prompt('원하는 달을 입력하세요(1~12)');
+        month = Number(month);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write('31일');
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.write('30일');
+                break;
+            case 2: document.write('28일');
+                break;
+            default: document.write('존재하지 않는 달을 입력했습니다');
+        }
+        //switch문 대신 if-elseif 를 사용한 경우
+        /*
+        //조건문이 맞는 경우가 많으면 논리연산자(||-or 나 &&-and)를 이용해서 조건식을 계산 할 수 있다
+        if(month==1||month==3||month==5||month==7||month==8||month==10||month==12)
+        {document.write('31일');}
+        else if(month==4||month==6||month==9||month==11)
+        {document.write('30일');}
+        else if(month==2)
+        {document.write('28일');}
+        else
+        {document.write('존재하지 않는 달입니다');}
+        */
     </script>
 </body>
 
