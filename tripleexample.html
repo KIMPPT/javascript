@@ -13,7 +13,11 @@
         //document.write로 출력
         let age=prompt('나이를 입력하세요');
         let answer=age>=19?'성인입니다':'학생입니다';
-        document.write(answer);
+        document.write(age+'세는 '+answer);
+        //변수초기화
+        let name=prompt('이름을 적어주세요');
+        name=name?name:'초기화';
+        document.write('<hr>'+name);
     </script>
 </body>
 </html>
