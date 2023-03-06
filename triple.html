@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    <script>
+        //삼항연산자 : 조건식과 참일 때, 거짓일 때 값을 이용한 계산식
+        //형태 : 조건 ? 참일때 실행할 코드 : 거짓일 때 실행할 코드 ;
+        let num1=0;
+        num1==0 ? '참입니다':'거짓입니다'; //담아두지 않아서 보이지가 않음
+        let result=num1==0 ? '참입니다':'거짓입니다';
+        document.write(result);
+        let money=prompt('금액을 입력하세요');
+        console.log(money>=1500?'버스를 탈 수 있다':1500-money+'원이 부족해서 버스를 탈 수 없다');
+    </script>
+</body>
+</html>
