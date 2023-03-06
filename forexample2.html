@@ -11,20 +11,55 @@
         let score=[,,,,]
         for(let i=0;i<5;i++)
         {
-            score[i]=prompt('점수를 입력하세요');
+            score[i]=Math.round(Math.random()*100);
         }
-        for(result of score)
+        for(let result of score)
         {
             if(result>=60)
             {
-                document.write(`${result}:합격`);
+                document.write(`<p>${result}:합격</p>`);
             }
             else
             {
-                document.write(`${result}:불합격`);
+                document.write(`<p>${result}:불합격</p>`);
             }
-            document.write(`,`);
         }
+        document.write(`<hr>`);
+        //length를 이용하는 방법
+        for(let i=0;i<score.length;i++)
+        {
+            if(score[i]>=60)
+            {
+                document.write(`<p>${score[i]}:합격</p>`);
+            }
+            else
+            {
+                document.write(`<p>${score[i]}:불합격</p>`);
+            }
+        }
+        document.write(`<hr>`);
+        for(i in score)
+        {
+            if(score[i]>=60)
+            {
+                document.write(`<p>${score[i]}:합격</p>`);
+            }
+            else
+            {
+                document.write(`<p>${score[i]}:불합격</p>`);
+            }
+        }
+        //for-in과 for은 사실상 유사하다고 보면 된다.
+        document.write(`<hr>`);
+        let student=['홍길동','장발장',''];
+        //student='성춘향';//배열이였던 student변수가 string(문자열)로 전환된다
+        student[0]='성춘향';//이런 식으로 인덱스를 추가해야 해당 값만 바뀐다.
+        for(i in student)
+        {
+            student[i]='이름 없음';
+        }
+        document.write(student);
+
     </script>
 </body>
 </html>
