@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반복문-while/do-while</title>
 </head>
+
 <body>
     <script>
+
         //형태 : while(끝날조건){조건을 만족할 때까지 실행할 코드}
+        let num = 0;
+        while (num < 3) {
+            document.write(`<p>3번 반복합니다</p>`);
+            num++;
+        }
+        let password=123;
+        while(password!=000){
+            alert('비밀번호가 틀렸습니다.');
+            password=Number(prompt('비밀번호를 입력해주세요'));
+        }
+        document.write(`<p>비밀번호를 맞게 적었습니다</p>`);
         //형태 : do{조건을 만족할 때까지 실행할 코드}while(끝날조건);
     </script>
 </body>
+
 </html>
