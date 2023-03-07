@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 연습</title>
+</head>
+<body>
+    <script>
+        //점수배열을 만들어 평균값을 구하시오
+        let score=[60,70,80,90,40,70,70];
+        let scoreSum=0;
+        for(let i=0;i<score.length;i++)
+        {
+            scoreSum+=score[i];
+        }
+        let scoreAvg=scoreSum/score.length;
+        document.write(`${score}의 평균값은 ${scoreAvg}이다.<br>`);
+        //1~100까지 숫자 중 홀수들의 합을 출력
+        let oddSum=0;
+        for(let i=0;i<=100;i++)
+        {
+            if(i%2==1)
+            {
+                oddSum+=i;
+            }
+        }
+        document.write(`1부터 100까지 숫자 중 홀수들의 합은 ${oddSum}입니다.<br>`);
+        
+        //1~100까지 숫자 중 3의 배수 또는 5의 배수 숫자들의 합을 출력
+         let orSum=0;
+         for(let i=0;i<=100;i++)
+         {
+            if(i%3==0||i%5==0)
+            {
+                orSum+=i;
+            }
+         }
+         document.write(`1부터 100까지 숫자 중 3의 배수 또는 5의 배수들의 합은 ${orSum}입니다.`);
+    </script>
+</body>
+</html>
