@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do-While문 실습</title>
+</head>
+<body>
+    <script>
+        //패스워드-green
+        //비밀번호를 맞출때까지 시행
+        //비밀번호 시도 횟수도 출력
+        let password;
+        let i=0;
+        do
+        {
+            password=prompt(`비밀번호를 입력하세요. ${i+1}번 째 시도중`);
+            i++;
+        }
+        while(password!='green');
+        document.write(`비밀번호를 맞게 입력했습니다. 총 시도 횟수는 ${i}회 입니다.`);
+    </script>
+</body>
+</html>

@@ -10,16 +10,21 @@
 
 <body>
     <script>
+        let primenumber=[]; //소수를 담기 위한 배열 생성
+        let k=1; //인덱스 값 미리 준비
         for (let i = 2; i <= 1000; i++) {
             for (let j = 1; (j * j < i); j) {
-                if(i==2)
+                if(i==2) //유일하게 짝수인 소수 2를 위한 특별식
                 {
                     document.write(`${i}는 소수입니다.<br>`);
+                    primenumber[0]=i; //2는 특수한 소수이기 때문에 따로 넣어둠
                     break;
                 }
                 j++;
                 if (j * j > i) {
                     document.write(`${i}는 소수입니다.<br>`);
+                    primenumber[k]=i; //3부터 인덱스1부터 차례대로 넣기
+                    k++; //다음 인덱스 준비
                 }
                 else {
                     if (i % j == 0) {
@@ -30,6 +35,7 @@
                 }
             }
         }
+        document.write(primenumber); //소수를 담아놓은 배열
     </script>
 </body>
 
