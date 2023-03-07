@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문과 조건문 실습</title>
+</head>
+<body>
+    <script>
+        let sum1=0;
+        //1~100 중에서 짝수만 출력
+        //추가로 그 짝수들의 합
+        for(let i=1;i<=100;i++)
+        {
+            if(i%2==0)
+            {document.write(`${i}`);
+            sum1+=i;
+            if(i==100)break;
+            document.write(`,`);
+            }
+        }
+        document.write(`<p>위의 짝수들은 합은 ${sum1} 입니다.</p>`);
+        //1~50 중에서 7의 배수만 출력
+        //추가로 그 7의 배수들을 모두 곱한 값
+        let sum2=1;
+        for(let i=1;i<=50;i++)
+        {
+            if(i%7==0)
+            {
+                sum2*=i;
+                document.write(`<p>${i}</p>`);}
+        }
+        document.write(`<p>위의 1부터 50까지 중 7의 배수의 곱은 ${sum2} 입니다.</p>`);
+    </script>
+</body>
+</html>
