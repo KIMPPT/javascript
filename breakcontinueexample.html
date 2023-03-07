@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break와continue 실습</title>
+</head>
+<body>
+    <script>
+        //while(true)에 break를 사용해서 1부터 10까지만 출력
+        let i=0;
+        while(true)
+        {
+            i++;
+            document.write(`${i}를 출력합니다.<br>`);
+            if(i==10) break;
+        }
+        document.write(`<hr>`);
+        //for()문과 continue를 써서 1~10 중 3의 배수가 아닌 숫자만 출력하기
+        for(i=1;i<=10;i++)
+        {
+            if(i%3==0) continue;
+            document.write(`${i}는 3의 배수가 아닙니다.<br>`);
+        }
+    </script>
+</body>
+</html>

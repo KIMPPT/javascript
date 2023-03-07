@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break와continue</title>
+</head>
+<body>
+    <script>
+        let i=0;
+        while(true)//true면 무한반복을 한다
+        {
+            document.write(`${i+1}번째 문장을 만들어 내고 있습니다<br>`);
+            i++;
+            if(i==10) break;
+            //i에 카운트를 넣어 10번째 되는 순간 while 문을 빠져나가게 함
+        }
+        /*
+        let password;
+        while(true)
+        {
+            password=prompt(`비밀번호를 입력해주세요`);
+            if(password==`000`) break;
+        }
+        document.write(`비밀번호를 맞추었습니다.`);
+        */
+       //continue : 반복 위치로 이동한다[그 밑에 있는 값들은 실행안함]
+       let num1=1;
+       while(num1<10)
+       {document.write(`${num1}<br>`);
+        num1++;
+        continue;
+        document.write(`continue이후 내용`);
+        }
+        let num2=0;
+        while(num2<5)
+        {
+            num2++;
+            if(num2%2==0) continue; //num2가 짝수이면 밑의 출력을 하지 않고 while조건문으로 감
+            document.write(`${num2}번째 글입니다.<br>`);
+        }
+        //for문+continue
+        for(let i=0;i<10;i++)
+        {
+            if(i%2==1) continue;
+            document.write(`${i}번째 글입니다<br>`);
+        }
+    </script>
+</body>
+</html>
