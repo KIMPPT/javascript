@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do-While반복문</title>
+</head>
+<body>
+    <script>
+        //Do-While반복문
+        //반드시 한번 실행 후 조건을 확인하는 반복문
+        //do{실행내용} while(조건문)
+        let i=0; //초기값을 지정해줘야 while에 변수를 넣을 수 있음
+        do
+        {
+            document.write(`3번 반복합니다<br>`);
+            i++
+        }
+        while(i<3)
+        //prompt로 값을 한번은 입ㅂ력받는 do-while
+        let password;
+        do
+        {
+            password=prompt('비밀번호를 입력하세요');
+        }
+        while(password!='000')
+        document.write(`비밀번호를 올바르게 입력했습니다`);
+    </script>
+</body>
+</html>
