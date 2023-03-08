@@ -9,12 +9,20 @@
 <body>
     <script>
         let result=0;
+        //함수 : 반복해서 출력하는 내용을 저장하는 공간
         //함수 선언 : function 만들함수명(매개변수있다면추가,복수일경우 쉼표로 구분){만들 함수명}
         function sum(num1,num2){
             return num1+num2;
         }
-        result=sum(2,2);
-        document.write(sum(3,3));
+        result=sum(2,2); //함수호출 : 함수명(매개변수);
+        document.write(`${result}<br>`);
+        document.write(`${sum(3,3)}<br>`);
+        function math(x)
+        {
+            return 2*x+3;
+        }
+        result=math(3);
+        document.write(`${result}<br>`);
         let num1=prompt('첫번째 수를 입력하세요');
         let num2=prompt('두번째 수를 입력하세요');
         let sum2=sum1(Number(num1),Number(num2));
