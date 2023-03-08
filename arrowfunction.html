@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수-익명함수보다 더 간단하게 줄여짐</title>
+</head>
+<body>
+    <script>
+        //화살표함수(=>) : 익명함수를 더 간단하게 표현
+        //형식 : 변수=(매개변수)=>{함수선언문장}
+        let hi=()=>{document.write(`안녕하세요`);}
+        hi();
+        //매개변수의 값이 1개일 경우 ()생략가능
+        //return 계산식 하나가 들어가는 함수의 경우 1줄인 경우 {} 생략가능. 이 때는 자동으로 return에 들어간다.
+        let introName=name=>{document.write(`${name}`)};
+        introName(`홍길동`);
+        let oddEvenCheck=num=>num%2==0?'짝수':'홀수'
+        document.write(oddEvenCheck(5));
+        //{}를 사용한 화살표함수인 경우 return 값이 필요하다면 직접 작성해야한다.
+        let oddEvenCheckPlus=num=>{
+            if(num%2==0) return `짝수`;
+            else return `홀수`;
+        }
+        document.write(oddEvenCheckPlus(3));
+    </script>
+</body>
+</html>
