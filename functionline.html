@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수표현식</title>
+    <script>
+        //무명함수 let 변수명 = fuction(매개변수){함수식} 형태
+        let a=function(){(`hello world!`);}
+        //선언문 함수에서 이름을 변수로 만들어서 사용
+        let print=function(string){document.write(`<p>${string}</p>`);}
+    </script>
+</head>
+<body>
+    <script>
+        print(a());
+        a();
+        for(let i=0;i<3;i++)
+        {
+            let hello=function(){document.write(`<p>안녕</p>`);}
+            hello;
+        }
+        hello;
+        
+    </script>
+</body>
+</html>
