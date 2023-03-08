@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수표현식 실습</title>
+</head>
+<body>
+    <script>
+        let sub=function(num1,num2){
+            let result=num1-num2>0?num1-num2:num2-num1;
+            return result;
+        }
+        //간단하게 생각하면 함수명 대신 변수명을 쓰는 셈
+        document.write(sub(11,10));
+        //숫자를 넣었을 때 홀수인지 짝수인지 알려주는 함수표현식
+        let a=prompt(`숫자를 입력하세요`);
+        let oddEvenCheck=function(num)
+        {
+            let check=num%2==0?`짝수`:`홀수`;
+            return check;
+        }
+        document.write(oddEvenCheck(a));
+        let b=function(){
+            document.write(`안녕하세요`);
+        }
+        b=2;
+        document.write(b);
+    </script>
+</body>
+</html>
