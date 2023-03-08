@@ -16,12 +16,27 @@
             num2=num2? num2:0; //삼항연산자로써 num2의 값이 있다면 num2를 그대로, 없다면 0을 num2에 넣는다.
             return num1 + num2;
         }
+        function multi(num1,num2=1) //매개변수=n을 지정하면 해당 매개변수를 입력하지 않아도 해당 매개변수 값이 n으로 잡아준다.
+        {
+            return num1*num2;
+        }
+        function more(a,b,...c)
+        {
+            document.write(a);
+            document.write(b);
+            document.write(c);
+        }
     </script>
 </head>
 
 <body>
     <script>
         document.write(add(5));
+        document.write(multi(7));
+        more(1,2,3,'ab');
+        //나머지 매개변수를 사용하는 경우(...)
+        //인수가 몇개가 들어 갈 지 모를 때 배열로 받아온다.
+        document.write("<p>","a","b","</p>");
     </script>
 </body>
 

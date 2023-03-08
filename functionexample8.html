@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명시적 함수 실습-7[나머지 매개변수 : ...]</title>
+    <script>
+
+        function addAll(...i)//나머지 매개변수는 
+        {
+            let sum=0;
+            for(let j=0;j<i.length;j++)
+            sum+=i[j];
+            return sum;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        document.write(addAll(1,2,3,9,8,7));
+    </script>
+</body>
+</html>

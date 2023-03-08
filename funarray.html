@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>배열을 입력받아 평균값 계산</title>
     <script>
-        let arraySum=0;
+        let arraySum=0; //합을 해줄 변수는 전역처리
         function avrg(array)
         {
-            for(let j=0;j<array.length;j++)
-            arraySum+=array[j];
-            return arraySum/array.length;
+            for(let j=0;j<array.length;j++) //for 문을 이용해 인덱스 끝번호까지 감
+            arraySum+=array[j]; //arraySum에 누적덧셈을 함. {}을 안쳐도 한줄만 있어서 동작에는 문제 없음
+            return arraySum/array.length; //배열에 모든 값을 더한 후 배열의 길이만큼 나눈 평균값 출력
         }
     </script>
 </head>
@@ -20,7 +20,7 @@
         let array=[]; //변수를 배열로 설정
         let j=0; //인덱스 부분
         let k=0; //인덱스j의 값 부분
-        while(typeof(k)=='number') //인덱스j 번째의 값의 형태가 number가 아니면 끝남
+        while(true) //무한반복
         {
             k=prompt('값을 입력하세요'); //인덱스j번째 값 입력
             k=Number(k); //숫자행으로 강제변환(숫자가 아니면 NaN이 됨)
