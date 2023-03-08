@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명시적 함수 실습 5</title>
+    <script>
+        let arraySum=0;
+        function avrg(array)
+        {
+            for(let i=0;i<array.length;i++)
+            {
+                arraySum+=array[i];
+            }
+            return arraySum/array.length;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let array=[30,40,60,40,20,40];
+        document.write(avrg(array));
+        //인수의 부족과 초과시
+    </script>
+</body>
+</html>

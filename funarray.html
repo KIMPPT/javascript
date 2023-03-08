@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열을 입력받아 평균값 계산</title>
+    <script>
+        let arraySum=0;
+        function avrg(array)
+        {
+            for(let j=0;j<array.length;j++)
+            arraySum+=array[j];
+            return arraySum/array.length;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let array=[]; //변수를 배열로 설정
+        let j=0; //인덱스 부분
+        let k=0; //인덱스j의 값 부분
+        while(typeof(k)=='number') //인덱스j 번째의 값의 형태가 number가 아니면 끝남
+        {
+            k=prompt('값을 입력하세요'); //인덱스j번째 값 입력
+            k=Number(k); //숫자행으로 강제변환(숫자가 아니면 NaN이 됨)
+            if(isNaN(k)) break; //숫자형인지 판별(아니면 while문을 빠져나가게함)
+            array[j]=k; //숫자형이면 인덱스j에 값 넣음(숫자가 아닐 때에는 위 break문으로 이미 빠져나감)
+            j++; //다음 인덱스 준비
+        }
+        document.write(`${array}<br>`);
+        document.write(avrg(array));
+    </script>
+</body>
+</html>

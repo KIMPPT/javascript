@@ -10,13 +10,17 @@
         {
             return num1*num2;
         }
+        function print(string)
+        {
+            document.write(string);
+        }
     </script>
 </head>
 <body>
     <script>
         let num1=prompt(`직사각형의 가로의 길이를 입력하세요`);
         let num2=prompt(`직사각형의 세로의 길이를 입력하세요`);
-        document.write(area(num1,num2));
+        print(area(num1,num2));
     </script>
 </body>
 </html>
