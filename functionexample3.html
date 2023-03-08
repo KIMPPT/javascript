@@ -9,6 +9,7 @@
         function introName(name)
         {
             document.write(`안녕하세요. ${name}입니다. 반갑습니다`);
+            print(`안녕하세요, ${name}입니다.`);
         }
     </script>
 </head>
@@ -16,6 +17,12 @@
     <script>
         let name=prompt(`이름을 입력하세요.`);
         introName(name);
+
+        introName(name);
+        function print(string)
+        {
+            document.write(`<p>${string}</p>`);
+        }
     </script>
 </body>
 </html>
