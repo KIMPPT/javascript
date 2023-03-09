@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 함수</title>
+</head>
+<body>
+    <script>
+        //미리 제공해주고 있는 함수
+        //parseInt : 숫자와 문자열을 같이 쓸 때 문자열 전 숫자만 찾아서 정수로 전환
+        //parseFloat : 실수를 출력해줌
+        //숫자열이 없다면 NaN으로 출력
+        document.write(`${parseInt(`10.5살`)}<br>`);
+        document.write(`${parseFloat(`3.141592는 pi다`)}<br>`);
+        //isFinite : 유효한 수인지 확인(Math.PI-원주율 도 유효한 수)
+        //(false가 뜨는 것들은 undefined,NaN,infinity,0으로 나누는 경우)
+        //return 값이 boll인 함수는 if문의 조건식으로도 많이 사용된다 
+        document.write(`${isFinite(0/0)}<br>`);
+        //타이머 함수 : 넣어준 함수를 시간에 따라 동작함(시간 단위 : ms)
+        let timeID=setTimeout(function(){document.write(`1초가 지났습니다`);},1000);
+        //타이머 함수는 임시로 저장되었다가 시간이 만족하면 그 때 단독 출현
+        document.write(`setTimeout 다음에 작성된 내용입니다`);
+        //`1초가 되었습니다`라고 출력하는 타이머함수 중지
+        clearTimeout(timeID);
+    </script>
+</body>
+</html>

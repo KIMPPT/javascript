@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수 실습</title>
+</head>
+<body>
+    <script>
+        let age=parseInt(prompt(`나이를 입력하세요`));
+        while(isNaN(age)){
+            alert(`빈 값이나 숫자가 아닌 값을 입력했습니다`);
+            age=parseInt(prompt(`나이를 입력하세요`));
+        }
+        let year=2023-age+1;
+        if(age<=0)
+        {document.write(`존재하지 않는 나이를 입력했습니다`);}
+        else
+        {document.write(`태어난 년도는 ${year}입니다`);}
+    </script>
+</body>
+</html>
