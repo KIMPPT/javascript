@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀함수(Recursion)</title>
+</head>
+<body>
+    <script>
+        //자기 자신을 불러오는 함수
+        //for문과 유사한 결과를 낸다
+        //for문으로 작성
+        function hi()
+        {
+            for(let i=0;i<5;i++)
+            document.write(`안녕하세요<br>`);
+        }
+        hi(); //for문 없이 5번 출력할려면 5번 입력해야함
+        //재귀함수로 작성-넣은 숫자만큼반복
+        let num=prompt(`숫자를 입력하세요`);
+        hi2(num);
+        function hi2(num){
+            document.write(`${num}번째<br>`);
+            //무한반복에 빠지지 않게 빠져나갈 조건문을 넣어야 한다
+            if(num<=0)
+            {
+                document.write(`0일 때 실행되는것<br>`);
+                return 0; //num이 0이 되는 순간 0으로 반환하고 원래 num값에 도달할때까지 증가함
+            }
+            else{
+                hi2(num-1);//0이 아니면 num값을 1 줄여서 다시 hi2함수로 실행
+                document.write(`0이 되기 전까지 실행되는것 : ${num}<br>`);
+            }
+            
+            document.write(`환영합니다<br>`);//재귀조건 위에 쓰면 1번 더 쓰인다
+        }
+
+    </script>
+</body>
+</html>
