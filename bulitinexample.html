@@ -14,6 +14,8 @@
             age=parseInt(prompt(`나이를 입력하세요`));
         }
         let year=2023-age+1;
+        //while문 위에 놓으면 맨 처음 넣은 값을 유지하기 때문에
+        //맨 처음 입력을 숫자가 아닌 값을 넣어 버리면 NaN으로 고정되어버림
         if(age<=0)
         {document.write(`존재하지 않는 나이를 입력했습니다`);}
         else
