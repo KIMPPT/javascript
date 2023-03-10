@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수를 이용한 객체의 생성 실습-1</title>
+</head>
+<body>
+    <script>
+        //생성자 함수 이름 : Student
+        //객체 속성 : name,score
+        //함수
+        //study() : score을 10 증가시킨다
+        //showScore() : score값을 return한다
+        //객체 생성
+        //let myStudent=new Student("홍길동",70)
+        //let yourStudent=new Student('성춘향'.80)
+        //객체접근을 하기위해서 this 키워드 사용
+        let Student=function(name,score){
+            this.name=name;
+            this.score=score;
+            this.study=function(){
+                this.score+=10;
+            }
+            this.showScore=function(){
+                return (this.score);
+            }
+        }
+        let myStudent= new Student(`홍길동`,70);
+        let yourStudent= new Student(`성춘향`,80);
+    </script>
+</body>
+</html>
