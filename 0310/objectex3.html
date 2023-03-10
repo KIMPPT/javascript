@@ -19,7 +19,7 @@
         //let myBusCard=new BusCard(1500);
         //let yourBusCard=new BusCard(1000);
         let BusCard=function(money){
-            this.money=money;
+            this.money=money;//받을 변수 지정
             this.charge=function(cost){
                 this.money+=cost; //버스카드에 충전
             }
@@ -34,6 +34,7 @@
         }
         let myBusCard = new BusCard(1500);
         let yourBusCard = new BusCard(1000);
+        //this는 자기자신의 객체를 가져온다
     </script>
 </body>
 </html>

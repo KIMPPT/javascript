@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수를 이용한 객체의 생성 실습-3</title>
+</head>
+<body>
+    <script>
+        //함수 이름 : Message
+        //매개변수 : name,content,time
+        //함수
+        //modifyMessage:function(message) : content에 message를 할당
+        //showMessage:functon(){}
+        //name+`님께서`+content+`를`+time+`에 보냈습니다.`를 분자열로 반환
+        //객체 생성
+        //let myMessage= new Message(`홍길동`,`반갑습니다`,`0224`);
+        //let yourMessage = new Message(`성춘향`,`안녕하세요`,`0224`);
+        let Message=function(name,content,time){
+            this.name=name;
+            this.content=content;
+            this.time=time;
+            this.modifymessage=function(message)
+            {
+                this.content=message;
+            }
+            this.showMessage=function()
+            {
+                return (`${this.name} 님께서 ${this.content} 를 ${this.time} 에 보냈습니다`);
+            }
+        }
+        let myMessage = new Message(`홍길동`,`반갑습니다`,`0224`);
+        let yourMessage = new Message(`성춘향`,`안녕하세요`,`0224`);
+    </script>
+</body>
+</html>
