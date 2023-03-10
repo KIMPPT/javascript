@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete 연산자를 이용한 삭제 실습</title>
+</head>
+<body>
+    <script>
+        //myMessage의 content를 지우고 어떻게 출력되는지 확인
+        //myMessage의 name을 지우고 어떻게 출력되는지 확인
+        //method인 showMessage를 이용하여 확인
+        let Message=function(name,content,time){
+            this.name=name;
+            this.content=content;
+            this.time=time;
+            this.modifyMessage=function(message)
+            {
+                this.content=message;
+            }
+            this.showMessage=function()
+            {
+                return (`${this.name} 님께서 ${this.content} 를 ${this.time} 에 보냈습니다`);
+            }
+        }
+        let myMessage = new Message(`홍길동`,`반갑습니다`,`0224`);
+        let yourMessage = new Message(`성춘향`,`안녕하세요`,`0224`);
+        //delete 객체명.지우고 싶은 변수명 or 함수명 을 입력하면 해당 변수(함수)가 지워진다.
+        //함수 중에 지운 변수가 있는 곳은 undefined가 표시된다.
+        //지운 함수를 입력하면 에러(존재하지 않는 함수명)이 나온다.
+
+        //객체 안의 속성(함수) 반복
+        //for...in
+/*
+        for(let i in puppy){
+            document.write(
+                `<p>${i}:${puppy[i]}</p>`
+            )
+        }
+        */
+       //for...in문으로 yourMessage의 속성과 함수 이름 출력
+       for(let i in yourMessage)
+       {
+        document.write(
+            `<p>${i}</p>`
+        )
+       }
+    </script>
+</body>
+</html>

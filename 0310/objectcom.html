@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 연습</title>
+</head>
+<body>
+    <script>
+        //리터럴(literal) 표기방법
+        let dog={
+            name:`강아지`,
+            age:2,
+            birth:function()
+            {
+                return (2023-this.age);
+            }
+        };
+        //생성자 함수 방법
+        let cat=function(name,age){
+            this.name=name;
+            this.age=age;
+            this.birth=function(){
+            return 2023-this.age;
+            }
+        }
+        dog.family=`시츄`; 
+        //이런 식으로 새로운 변수 추가도 가능하다.
+        let cat1= new cat(`나비`,2)
+        cat1.family=`샴`; //cat1이라는 객체 안에 family=`샴`라는 변수를 추가했다. cat1 객체 생성 이전에 하면 들어가지 않는다.
+        //생성자 함수 방법 시에 담을 변수를 지정해줘야 적용 할 수 있다.
+        //안에 내용물을 출력하는 방법
+        //1. 객체명.변수나 함수명
+        document.write(dog.name);
+        document.write(cat1.birth());
+        //2. for...in 문을 이용한 전부나 특정경우만 배열
+        for(let i in dog)
+        {
+            document.write(`${dog[i]}<br>`);
+        }
+        for(let i in cat1)
+        {
+            if(typeof(cat1[i])!='function') //if문을 넣어 함수가 아닌 값들만 출력하게 했다.
+            document.write(`${cat1[i]}<br>`);
+        }
+    </script>
+</body>
+</html>

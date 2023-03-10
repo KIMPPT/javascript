@@ -35,6 +35,13 @@
         let myBusCard = new BusCard(1500);
         let yourBusCard = new BusCard(1000);
         //this는 자기자신의 객체를 가져온다
+        //for...in의 속성과 함수와 각 값들 출력
+        for(let i in myBusCard){
+            if(typeof(myBusCard[i])!='function') //이 조건문은 myBusCard 안의 자료형들 중 함수형은 출력하지 않음
+            document.write(
+                    `<p>${i}:${myBusCard[i]}</p>`
+            )
+        }
     </script>
 </body>
 </html>
