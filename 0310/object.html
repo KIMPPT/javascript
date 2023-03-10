@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(object)</title>
+</head>
+<body>
+    <script>
+        //객체 : 속성값과 함수(method)를 가지고 있는 자료형(변수에 저장해서 사용)
+        //document의 자료형 : 객체(object)
+        document.write(typeof(document));
+        //객체 생성 후 변수에 할당
+        let puppy={
+            //속성
+            name:`choch`,
+            //함수
+            eat:function(){
+                document.write(`밥을 먹습니다<br>`);
+            },
+            eat2:function(){
+                document.write(`${this.name}밥을 먹습니다`);
+                //this라는 것으로 이 변수라는 조건을 새김
+            }
+        };
+        document.write(`${puppy}`);
+        document.write(`${puppy.name}`);
+        document.write(`${puppy[`name`]}`);
+        document.write(`${puppy.eat()}`); //undefined 값이 나오는 이유는 객체의 함수에서 return값을 지정해줬지 않았기 때문에 기본값은 undefined가 출력된 것
+        document.write(`${puppy.eat2()}`);
+        //기본 생성자로 작성
+        function Dog(color,name,age){
+            //객체의 속성할당
+            this.name=name;
+            this.color=color;
+            this.age=age;
+            //함수 작성
+            this.eat=function(){
+                return `${this.name}는 밥을 먹습니다`;
+            }
+        }
+        let dog1 = new Dog(`흰색`,`백구`,1);
+        //없는 속성에 접근해도 오류가 발생하지 않고 undefined를 출력
+        dog1.family=`진돗개`;
+        //더욱이 새로운 속성을 추가도 가능하다
+    </script>
+</body>
+</html>

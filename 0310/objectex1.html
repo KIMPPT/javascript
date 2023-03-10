@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리터럴 표기를 이요한 객체 생성 실습01</title>
+</head>
+
+<body>
+    <script>
+        //이름 : person
+        //속성 : name:"홍길동", address:"부산"
+        //함수 : intro "name입니다. address에 거주중입니다" 를 문자열로 반환(return)
+        let person = {
+            name: `홍길동`,
+            address: `부산`,
+            intro: function () {
+                return (`${this.name}입니다. ${this.address}에 거주중입니다`);
+            }
+        }
+        //객체 속성에 접근해서 바로 값을 할당 할 수도 있다.
+        let myCookie = {
+            shape: `원`,
+            flavor: `초코`,
+            intro: function () {
+                //this는 자기자신의 객체를 가져온다
+                return (`${this.shape}모양의 ${this.flavor}맛입니다.`);
+            },
+            count:function(number){
+                return (`${number}개 있습니다`);
+            }
+        }
+        myCookie.intro();
+    </script>
+</body>
+
+</html>
