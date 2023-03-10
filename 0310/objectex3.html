@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자함수를 이용한 객체의 생성 실습-2</title>
+</head>
+<body>
+    <script>
+        //함수 이름 : BusCard
+        //매개변수 : money
+        //함수
+        //charge=function(금액){금액 값 만큼 money 증가}
+        //takeBus=function(){money에서 1500을 빼고 저장.
+            //만약 money의 값이 1500보다 작으면 "잔액이 부족합니다" 콘솔에 출력}
+        //showMoney=function(){money의 값을 return}
+        //객체 생성
+        //let myBusCard=new BusCard(1500);
+        //let yourBusCard=new BusCard(1000);
+        let BusCard=function(money){
+            this.money=money;
+            this.charge=function(cost){
+                this.money+=cost; //버스카드에 충전
+            }
+            this.takeBus=function(){
+                if(this.money<1500) return `잔액이 부족합니다.`;
+                //금액을 빼기 이전에 잔액이 1500원 미만이면 빼지 않고 '잔액이 부족합니다' 띄워야함
+                this.money-=1500; //1500원 이상이면 빼는 과정 실시
+            }
+            this.showMoney=function(){
+                return this.money; //잔액확인
+            }
+        }
+        let myBusCard = new BusCard(1500);
+        let yourBusCard = new BusCard(1000);
+    </script>
+</body>
+</html>
