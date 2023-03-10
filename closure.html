@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저(closure)함수</title>
+</head>
+<body>
+    <script>
+        //함수 안에 (중첩)함수를 리턴해서 안에 변수값을 바꾸는 함수(클로저)
+        function count(){
+            let countNum=0;
+            return countNum++;
+           /*return function(){
+                return countNum+=1;
+            }
+            */
+        }
+        document.write(count());
+        document.write(count());
+        //이런식으로 짠 경우 함수를 다시 불러올 때 countNum값이 초기화가 된다.
+        //클로저 함수를 사용
+        function countClosure(){
+            //함수 안에 지역변수
+            let count=0;
+            //return을 통해 중첩함수 전달
+            //계산식과 함수호출은 실행. 함수내용을 적으면 그대로 전달
+            return function(){
+                return count+=1;
+            }
+        }
+        //이렇게 밖에서 따로 return한 함수 내용을 사용하기 위해 변수에 담음
+        //실제로 countClosure()를 출력해보면 function(){return count+=1;}이 나온다
+        let counter=countClosure();
+        //counter도 함수이기 때문에 ()를 빼고 출력을 하면 함수내용이 출력된다.
+        document.write(counter);
+
+    </script>
+</body>
+</html>

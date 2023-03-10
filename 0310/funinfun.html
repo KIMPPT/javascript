@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 함수</title>
+</head>
+<body>
+    <script>
+        function f() {
+            let num=123;
+            function g() {
+                alert(num);
+            }
+            g();
+        }
+        f();
+        //함수 안에 정의한 g() 함수는 밖에서는 정의가 되지 않는다. 지역변수이다
+    </script>
+</body>
+</html>
