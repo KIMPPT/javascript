@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 객체-string(문자열)</title>
+</head>
+<body>
+    <script>
+        let string=`string`;
+        document.write(`${string.charAt(2)}<br>`);
+        //charAt(n) : 문자열 중 인덱스가 n인 문자 호출. 배열과 똑같기 변수열[n]도 가능하고 같은 기능이다.
+        document.write(`${string.match(`str`)}<br>`);
+        //match : 지정된 문자와 동일한 문자 출력. 없다면 null 출력
+        document.write(`${string.search("st")}<br>`);
+        //search : match와 비슷하다. 차이점은 출력값이 인덱스 번호이고 없다면 -1이 출력된다.
+        document.write(`${string.replace(`rin`,`abc`)}<br>`);
+        document.write(`${string}<br>`);
+        document.write(`${string.split(`i`)}<br>`);
+        document.write(`${Array.isArray(string.split(`i`))}<br>`);
+        //split : 문자열을 해당 문자(열)를 기준으로 나눔. 기준되는 문자(열)은 ,로 대체되고 배열로 바뀐다.
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체 실습</title>
+</head>
+<body>
+    <script>
+        //charAt(n)과 replace()를 이용해 홍길동의 가운데 값을 *로 출력
+        //변경은 replace, 가운데 조건은 charAt
+        //이름이 홍홍홍 일 경우 ***로 출력-replaceAll
+        let name=`홍길동`;
+        document.write(name.replace(name.charAt(1),`*`));
+        
+    </script>
+</body>
+</html>
