@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 확인 문제</title>
+</head>
+
+<body>
+    <script>
+        function Product(name, pay) {
+            this.name = name;
+            this.pay = pay;
+            this.keep = function () {
+                return `${this.name}을 보관했습니다`;
+            }
+            this.getPay = function () {
+                return this.pay;
+            }
+        }
+        let book = new Product(`book`, 6000);
+        let pencil = new Product(`pencil`, 2000);
+        let hat = new Product(`hat`, 8000);
+        let num = 160;
+        let flowerArray = [`해바라기`, `튤립`, `장미`];
+        function User(id, money, ...buylist) {
+            this.id = id;
+            this.money = money;
+            this.buylist = buylist;
+            this.charge = function (plusMoney) {
+                return this.money += plusMoney;
+            }
+            this.buy = function (Product) {
+                this.money -= Product.getPay();
+                this.buylist.push(Product.name);
+            }
+        }
+
+        let harry = new User(`harry`, 10000)
+    </script>
+</body>
+
+</html>
