@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체-미리 작성된 객체</title>
+</head>
+<body>
+    <script>
+        let array=[`A`,`B`,`C`];
+        document.write(array.join());
+        //배열이 한줄로 출력(인덱스 사이는 () 안의 내용(기본값은 ,)으로로 구분)
+        let arrayTest=new Array(1,2,3,4); //위에서 array를 썼으므로 여기에서는 앞글자를 대문자로 해서 새로운 배열을 만들었다
+        document.write(`${arrayTest},${typeof(array.join())},${typeof(array)}`);
+        let arrayconcat=array.concat([1,2,3]);
+        let arraycopy=array.concat();
+        document.write(`<br>${arrayconcat}`);
+        document.write(`<br>${array}`);
+        document.write(`<br>${arraycopy}`);
+        let arrayCopy=array; 
+        //이런 식의 복사는 문자열이나 숫자에서는 한쪽값이 바뀌어도 다른쪽 값은 그대로지만
+        //배열이나 객체의 경우 주소를 할당받아서 하기 때문에 한쪽 값이 바뀌면 다른쪽 값도 바뀌게 된다
+        array.push(`새로운 언어`);
+        document.write(`<br>${array}`);
+        document.write(`<br>${arrayCopy}`); 
+        //1. 함수를 이용한 복사
+        let arraycopy2=array.concat(); //안에 배열이 없으면 그대로 복사된다.
+        arraycopy2.push(`def`);
+        document.write(`<br>${array}`);
+        document.write(`<br>${arraycopy2}`); 
+        //2. 값을 꺼내쓰는 연산자를 이용해 복사
+        //... : 스프레드 연산자-객체나 배열의 값을 꺼내서 반환
+        let arraycopy3=[...array];
+        arraycopy3.push(`abc`);
+        document.write(`<br>${array}`);
+        document.write(`<br>${arraycopy3}`); 
+        //splice : 지정된 배열의 값을 삭제하거나 추가
+        array.splice(1,1); //시작할 인덱스 번호, 지울 배열 갯수
+        document.write(`<br>${array}`);
+        array.pop(); //배열의 맨 뒤 값을 제거
+        document.write(`<br>${array}`);
+
+    </script>
+</body>
+</html>

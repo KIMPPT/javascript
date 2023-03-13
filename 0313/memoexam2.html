@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물병원 진료차트</title>
+</head>
+<body>
+    <script>
+        function AnimalChart(name,kind,age){
+            this.name=name;
+            this.kind=kind;
+            this.age=age;
+            this.sickness=``;
+            this.condition=``;
+            this.receive=function(sickness,condition)
+            {
+                return this.sickness=sickness,this.condition=condition;
+            }
+            let allString=``;
+            this.confirm=function()
+            {
+                for(let i in this) //초기 받기 전에 위에서 this.로 받았기 때문이 this를 넣는다
+                {
+                    if(typeof(this[i])!="function")
+                    allString+=this[i];
+                }
+                return allString;
+            }
+        }
+        let first= new AnimalChart(`홍길동`,`강아지`,1);
+        let AnimalChartArray=[
+            new AnimalChart(`성춘향`,`고양이`,2),
+            new AnimalChart(`이몽룡`,`토끼`,3)
+        ] //배열안에 객체를 넣으면 똑같은 배열의 다른 자료들을 관리하기 쉽다.
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 안 객체</title>
+</head>
+
+<body>
+    <script>
+        let memo = {
+            title: `오늘 할 일`,
+            todo: {
+                morning: [`청소`, `준비`],
+                afternoon: [`수업`],
+                evening: [`정리`, `독서`]
+            }
+
+        }
+        document.write(`${memo.todo.morning[1]}`);
+        let Array=[{time:`아침`,todo:`청소`},
+                    {time:`점심`,todo:`수업`},
+        {time:`저녁`,todo:`독서`}
+    ];
+    document.write(Array[1].todo);
+    </script>
+</body>
+
+</html>
