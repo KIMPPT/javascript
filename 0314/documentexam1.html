@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 요소의 스타일 변경</title>
+</head>
+
+<body>
+    <p class="class-name">클래스이름</p>
+    <p id="title">타이틀</p>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ul id="list2">
+        <li>요소1</li>
+        <li>요소2</li>
+        <li>요소3</li>
+        텍스트
+    </ul>
+    <script>
+        let classname=document.querySelector(".class-name");
+        classname.style.backgroundColor="yellow"; //background-Color를 쓸 수 없기 때문에 붙여서 쓴다.
+        let title=document.querySelector("#title");
+        title.style.textDecoration="line-through";
+        let listli=document.querySelectorAll("#list li");
+        for(let i=0;i<listli.length;i++)
+        {
+            listli[i].style.color="blue";//listli의 i번째 인덱스의 style중 color를 바꾸는 의미
+            //없는 속성값에도 값을 할당 할 수도 있다.
+        }
+        let list2=document.querySelectorAll("#list2>li");
+        //노드로의 접근
+    </script>
+</body>
+
+</html>

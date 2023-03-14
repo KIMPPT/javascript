@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 메소드-요소 선택 실습</title>
+</head>
+<body>
+    <p class="class-name"></p>
+    <p id="title2"></p>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <a href="#">뮻</a>
+    <form id="form">
+        <label for="">이름</label>
+        <input type="text" name="" id="name">
+    </form>
+    <script>
+        //요소 생성
+        let element=document.createElement("h1");
+        //요소의 속성 추가/수정
+        //innerHTML : 요소안의 내용변경
+        // .을 통해 속성에 접근
+        //style객체의 속성에 전급하여 변경
+        element.innerHTML="원하는 값 작성";
+        element.id="title2";
+        element.style.color="red";
+        
+        let className=document.querySelector(".class-name");
+        className.innerHTML="클래스를 통해 수정된 내용입니다.";
+        let title2=document.querySelector("#title2");
+        title2.innerHTML="아이디를 들고 와서 수정된 내용입니다."
+        let listli=document.querySelectorAll("#list>li");
+        //인덱스값으로 접근해서 바꾸기
+        listli[0].innerHTML="요소를 수정하였습니다.";
+        //for문을 이용해 바꾸기
+        for(let i=0;i<listli.length;i++){
+            listli[i].innerHTML="요소를 한번에 수정했습니다.";
+        }
+        let array=[`html`,`css`,`javascript`]
+        for(let i=0;i<array.length;i++)
+        document.write(array[i].innerHTML=array[i]);
+        let atag=document.querySelector("a"); //태그에 바로 접속
+        atag.href="다음으로 연결";
+        let stop=document.querySelector("#form>#name"); //id가 form인 태그 의 input태그로 접속
+        //querySelector로 찾지 못했다면 Null이 뜨고 속성에 접근하지 못하기 때문에 오류가 뜬다.
+        stop.disabled=true; //disabled 활성화
+    </script>
+</body>
+</html>
