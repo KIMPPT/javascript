@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arrayString=[1,2,3,4];
+        let object={
+            name:`객체`,
+            value:`값`,
+            toString:function(){return this.value;}
+            //toString 함수를 작성하면 객체의 변수이름을 호출 했을 때 리턴할 내용을 정할 수 있다.
+        }
+        document.write(`${arrayString.toString(function(){return `배열`;})}<br>`);
+        document.write(`${object}<br>`);
+
+    </script>
+</body>
+</html>
