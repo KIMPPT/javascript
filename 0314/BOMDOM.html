@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM,DOM</title>
+</head>
+<body>
+    <p>BOM:브라우저 객체 모델(Browser Object Model)</p>
+    <p>브라우저의 정보에 저븍ㄴ하거나 브라우저의 여러 기능을 제어하기 위한 객체 모델<br>
+        전역 객체로 사용 가능</p>
+        <p>window 객체</p>
+        <p>웹 브라우저의 창을 나타내는 객체(대표적인것 : document 객체)</p>
+    <p>DOM:문저 객체 모델(Document Object Model)</p>
+    <script>
+        //브라우저(인터넷창)에 접근하여서 자바스크립트로 제어하기 위한 모델
+        //최상위 객체 : window. 현재 객체가 window이기 때문에 window=this 로도 접근이 가능
+        //document도 window 안에 속한 개체
+        let i=0;
+        //location 객체
+        //현재 웹페이지에 대한 정보를 가지고 있다
+        //.reload()를 사용하면 페이지가 새로고침이 된다/
+        document.write(`${location.href}<br>`);
+        let result=confirm(`선택해주세요`);
+        document.write(result);
+    </script>
+    <p>DOM : XML이나 HTML 문서에 접근하기 위한 일종의 인터페이스</p>
+</body>
+</html>

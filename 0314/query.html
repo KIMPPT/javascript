@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>query</title>
+</head>
+
+<body>
+    <h1 id="title">DOM</h1>
+    <ol id="list">
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ol>
+    <script>
+        //DOM : 문서 객체 모델
+        //html의 요소를 객체로 선택하거나 생성
+        let title = document.querySelector("#title");
+        console.log(title);
+        let list = document.querySelector("#list");
+        console.log(list);
+        console.dir(list);
+        //문서 객체를 객체형태로 출력해서 보여줌
+        //#은 ID명, .은 CLASS명
+        //queryselector는 하나의 요소만 가능
+        //queryselectorAll은 여러개의 요서를 배열에 넣어서 가져온다
+        //getElement(s)~ : s가 없으면 1개, s가 있으면 여러개
+    </script>
+
+</body>
+
+</html>
