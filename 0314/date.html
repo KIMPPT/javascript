@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>내장 객체-Date</title>
+</head>
+<body>
+    <script>
+        let today=new Date();
+        document.write(`${today.getFullYear()}년<br>`);
+        document.write(`${today.getMonth()+1}월<br>`);
+        document.write(`${today.getDay()}<br>`);
+        document.write(`${today.getDate()}일<br>`);
+        document.write(`${today.getTime()}<br>`);
+        document.write(`${today.getHours()}시<br>`);
+        document.write(`${today.getMinutes()}분<br>`);
+        document.write(`${today.getSeconds()}초<br>`);
+        let startTime=new Date;
+        for(let i=0;i<1000;i++)
+        {
+            console.log(i);
+        }
+        let endTime=new Date;
+        document.write(`${endTime-startTime}<br>`);
+        //set - 시간이나 날짜 변경하고 싶을 때 사용
+        today.setFullYear(2020);
+        document.write(`${today.getFullYear()}<br>`);
+        //UTC - 협정 세계시 기준(utc를 뺀다면 컴퓨터의 값을 기준)
+        document.write(`${today.getUTCHours()}<br>`);
+        
+    </script>
+</body>
+</html>
