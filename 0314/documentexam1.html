@@ -33,8 +33,21 @@
             listli[i].style.color="blue";//listli의 i번째 인덱스의 style중 color를 바꾸는 의미
             //없는 속성값에도 값을 할당 할 수도 있다.
         }
-        let list2=document.querySelectorAll("#list2>li");
+        let listli2=document.querySelectorAll("#list2 li");
         //노드로의 접근
+        //부모 : parentNode,parentElement
+        //자식 배열 : childNodes,children
+        //첫번째,마지막 배열 : firstChild~,firstElementChild
+        //형제 : nextSibling,nextElement - 전이면 previous
+        //각 부모나 형제로 접근 한 뒤(변수에 할당) 그 속성에서 다시 부모나 형제자식으로 접근 가능하다
+
+        //list의 2번째 li인 CSS값 출력
+        //1. list 요소에 .을 통해 찾기
+        console.log("요소찾기",list.firstElementChild.nextElementSibling);
+        //2. list 요소에 첫번째 자식을 변수로 저장한 후 찾기
+        let save=list.firstElementChild;
+        console.log("요소찾기",save.nextElementSibling);
+        //
     </script>
 </body>
 
