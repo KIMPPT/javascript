@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드의 관리 실습-생성/추가</title>
+</head>
+<body>
+    <script>
+        let padd=document.createElement("p"); //p태그 생성
+        let bodyelement=document.querySelector("body"); //body 태그 지정
+        bodyelement.appendChild(padd); //body 태그 자식태그로 p 태그 추가
+        let textadd=document.createTextNode("textnode를 이용한 텍스트입니다."); //텍스트 노드 생성
+        padd.appendChild(textadd); //p 태그 자식으로 텍스트 노드 추가
+        padd.style.color="blue"; //p태그의 style의 color 값을 blue로 지정
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+h1 태그를 찾은 후 childNode를 이용하여 nodeValue의 값을 출력
+let head=document.querySelector("h1") : h1태그를 찾아서 지정
+head.childNode : head의 노드를 확인 할 수 있음 [0:text 로 나옴]
+head.childNode[0].nodeValue : [0]을 집어넣은 이유는 위에 0:text가 있기 때문. 
+li 태그를 찾은 후 parentNode를 이용하여 ul을 찾고 nextElementSibling을 이용하여 다음 형제요소가 무엇인지 확인
+let fisrt=document.queryselector("li")
+first.parentNode : 상위(부모) 태그를 찾으므로 li 위는 ul이다
+first.parentNode.nextElementSibling : 상위(부모)태그를 찾고 그 태그에서 다음 태그를 찾는 내용
+
+ul 태그를 찾은 후 firstChild의 nextSibling가 무엇인지 확인하기
+let list2=document.querySelector("ul") : ul태그 찾아서 지정함
+list2.firstChild : ul 태그의 첫번째 자식을 찾음 [대부분 text]
+list2.firstChild.nextSibling : text다음 node를 찾음[li]
+
+createElement-요소 생성(태그)
+createAttribute-속성 생성
+createTextNode-텍스트 생성
+위 3개는 일단 js에서만 생성된거라서 html에 추가가 안됨
+appendChild-현재 노드 안에 자식노드 추가
+이 과정을 통해서 html에 넣기
+remove-통으로 제거
+removeChild-자식노드 제거
+removeAttribute-현재노드의 속성 제거
+html에서 dom 객체(js)로 들고와야 제거가 가능함
+html에서만 제거 되어 있고 js에는 남아 있기 때문에 js에 변수로 지정해놓았다면 다시 불러 올 수도 있다.
+노드로 접근해서 자기자신을 삭제 할 수도 있다. 대신 이 경우 return 값은 없다.
+
+속성과 태그 안의 글자의 경우 DOM 속성에 접근해서 값을 바꿀 수 있다.
+innerHTML 과 textContent는 동일한 기능이다(텍스트 수정)
+
+동일한 객체를 다른 곳에 추가도 가능하다. 대신 한개만 사용가능하다. (예를 들어 body에 추가한 것을 배열이나 ul에 넣는다면 body에 있던 것은 사라진다.)
+동일한 객체를 여러번 html 문서에 사용하고 싶을 때는 노드를 복제해서 쓴다.
+let 복제할 객체명 = 기존객체명.colneNode(true);
+복제했기 때문에 복제한 것을 수정해도 기존것은 수정되지 않는다.
+객체(배열)을 동일한 새로운 객체를 만들 때 메소드 사용

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드로의 접근 실습-1</title>
+</head>
+
+<body>
+    <h1 id="title">노드로의 접근</h1>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        let title = document.querySelector("h1"); //태그로 바로 접근
+        let list = document.querySelectorAll("#list li");
+        //h1태그를 찾은 후 childNode를 이용해 nodeValue 값을 출력
+        //title.childNodes : 이걸로 안의 nodeValue 값을 확인가능
+        //title.childNodes[0].nodeValue : 위를 입력하면 0:text 이기 때문에 배열처럼 0번째를 넣어야 확인이 가능하다.
+        let list2 = document.querySelector("ul")
+        console.log(list2.firstChild);
+        console.log(list2.firstChild.nextSibling);
+
+        //node관리
+        //생성
+        let addelement = document.createElement("h2");
+        // 속성과 텍스트 생성
+        let addelement2 = document.createAttribute("style");
+        let addelement3 = document.createTextNode("h2태그 생성");
+        //생성한 속성과 텍스트를 Element에 넣기
+        addelement.setAttributeNode(addelement2); //h2태그의 속성값이 들어가야 하므로 형제노드로 추가
+        addelement.appendChild(addelement3); //텍스트라서 자식노드로 추가
+        //body에 추가
+        let bodyelement = document.querySelector("body");
+        bodyelement.appendChild(addelement);
+
+        //속성과 태그 안의 글자의 경우 DOM 속성에 접근해서 값을 바꿀 수 있다.
+        addelement.style.color = "blue";
+        addelement.innerHTML = "값을 변경합니다";
+        addelement.textContent = "abc";
+
+        //동일한 객체를 다른 곳에 추가
+        list2.appendChild(addelement);
+        let copyelement=addelement.cloneNode(true);
+        bodyelement.appendChild(copyelement);
+        copyelement.innerHTML="복사한 요소";
+
+        //노드의 삭제
+        //lu태그의 첫번째 자식 li 삭제
+        list2.removeChild(list2.firstElementChild); //DOM으로 return값을 넣어준다.
+        list2.firstElementChild.remove(); //ul 태그의 첫번째 자식으로 들어가서 자기자신을 삭제. return값이 없다.
+    </script>
+</body>
+
+</html>
