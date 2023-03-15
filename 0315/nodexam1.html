@@ -5,15 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>노드의 관리 실습-생성/추가</title>
+    <link rel="stylesheet" href="/0315/classlist.css">
 </head>
 <body>
+    <h1>
+        이름
+    </h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <!--클래스 추가/제거-->
+    <h2 class="addclass"> 클래스 추가되면 파란색이 됩니다.</h2>
+    <h2 class="deleteclass"></h2>
     <script>
         let padd=document.createElement("p"); //p태그 생성
         let bodyelement=document.querySelector("body"); //body 태그 지정
         bodyelement.appendChild(padd); //body 태그 자식태그로 p 태그 추가
         let textadd=document.createTextNode("textnode를 이용한 텍스트입니다."); //텍스트 노드 생성
         padd.appendChild(textadd); //p 태그 자식으로 텍스트 노드 추가
+        //요소의 속성값 수정
         padd.style.color="blue"; //p태그의 style의 color 값을 blue로 지정
+        textadd.nodeValue="textNode의 nodeValue로 접근했습니다"
+        //제거
+        padd.removeAttribute("style"); //p 태그의 style 속성을 제거
+        let list=document.querySelector("ul");
+        list.removeChild(list.firstElementChild); //list의 첫번째 li만 제거
+         //list.remove(list) : ul태그를 삭제하기 때문에 html에서 안보임
+         //복제-변수에 넣어서 추가
+         let h1add=document.querySelector("h1");
+         let h1copy=h1add.cloneNode(true);
+         h1copy.removeAttribute("style");
+         bodyelement.appendChild(h1copy);
+         //변수로 넣어서 추가하면, 변수값을 통해 제어 가능
+         //복제한 요소를 바로 추가
+         bodyelement.appendChild(padd.cloneNode(true));
+         //이 경우 자바스크립트에서 제어 할 수 없기에 다시 document.querySelector를 통해 가져와 제어해야한다.
+
+         //각 요소의 클래스를 추가,제거 기능
+         let h2=document.querySelector(".addclass");
+         h2.classList.remove("addclass"); //삭제
+         h2.classList.add("addclass","hu"); //추가 ,를 통해서 여러개 추가
+         h2.classList.toggle("addclass"); //토글
     </script>
 </body>
 </html>

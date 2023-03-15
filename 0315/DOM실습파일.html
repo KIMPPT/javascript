@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수정하기 전 제목입니다</h1>
+    <div>
+        <ul>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ul>
+        <ol>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ol>
+    </div>
+    <div class="main">
+        <p><span>빈 공간</span> 입니다</p>
+    </div>
+    <div class="footer">
+        <p>푸터영역입니다</p>
+    </div>
+
+    <script>
+        let title=document.querySelector("h1");
+        title.textContent=("DOM 이용한 수정"); //h1 태그의 글자 수정
+        title.style.color="blue"; //h1 태그의 글자색 지정
+        title.style.backgroundColor="rgb(175,175,175)"; //h1 태그의 배경색 지정
+        let ullist=document.querySelector("ul");
+        ullist.removeChild(ullist.firstElementChild); //ul의 첫번째 li요소 제거
+        let addlist=document.createElement("li");
+        /*이 두 줄 대신에 밑에처럼 변수에 바로 텍스트 삽입이 간단함
+        let addlisttext=document.createTextNode("새로 추가된 노드요소 입니다.");
+        addlist.appendChild(addlisttext); //addlist에 텍스트 추가
+        */
+        addlist.innerHTML="내용을 바꾸었습니다.";
+        ullist.appendChild(addlist); //마지막에 addlist로 짠 태그 추가
+        let ollist=document.querySelector("ol");
+        ollist.firstElementChild.textContent=("내용을 바꾸었습니다"); //ol안의 첫번째 li의 텍스트내용 변경
+        ollist.removeChild(ollist.lastElementChild); //맨 마지막 배열 먼저 제거 (1,2,4번째 남음)
+        ollist.removeChild(ollist.children[1]); // 원래 배열 중 인덱스번호가 1(2번째)인 배열 제거
+        let maintext=document.querySelector(".main"); //class명이 main인 태그 접근
+        let maintextred=document.querySelector(".main span"); 
+        //class명이 main인 태그의 자손 중 span 태그로 접근
+        //참고로 .main.p>span도 동일하다. 왜냐하면 자식의 자식으로 내려갔기 때문
+        maintextred.style.color="red"; //class명이 main인 태그 안의 span 태그에만 빨간색 적용
+        let mainp=maintextred.parentElement;
+        let main2=maintextred.cloneNode(true); //복제
+        let main3=maintext.cloneNode(true); //복제
+        maintext.appendChild(mainp);
+        maintext.appendChild(main3);
+    </script>
+
+</body>
+</html>
