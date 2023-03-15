@@ -26,6 +26,22 @@
 
             //p태그의 글자색 바꾸기
             resultp.style.color = "blue";
+            console.log(resultp.style.color);
+            //p태그의 이전 형제 태그인 button 태그에 접근해서
+            //style의 color를 red로 바꾸기
+            let buttonafter=resultp.previousElementSibling;
+            buttonafter.style.color="red";
+
+            // 버튼을 클릭 했을 때 버튼의 글자색이 검정이면 빨간색
+            // 글자색이 빨강이라면 검정으로 출력
+            if(buttonafter.style.color=="red")
+            {
+                buttonafter.style.color="";
+            }
+            else 
+            {
+                buttonafter.style.color="red"
+            }
         }
     </script>
     <!--input 태그를 가져와서 value 값 가져오기-->

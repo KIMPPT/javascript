@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 실습-2</title>
+</head>
+<body>
+    <!--input 태그와 button을 이용한 이벤트 연습-->
+    <p>아래 숫자를 입력하면 구구단을 출력해줍니다.</p>
+    <input type="number" name="" id="gugu">
+    <button onclick="result()">단 확인</button>
+    <div id="gugudan">
+        <p>
+
+        </p>
+    </div>
+    <script>
+        function result(){
+            let gugu=document.querySelector("#gugu"); //input 호출
+            num1=gugu.value; //input의 value값 가져옴
+            //위 두 줄을 한줄로 합칠수도 있다.
+            //let gugu=document.querySelector("#gugu").value;
+            let gugudan=document.querySelector("#gugudan"); //div 부분 호출
+            let line=gugudan.firstElementChild;
+            let padd=document.createElement("p");
+            if(num1<2 || num1>9) 
+                line.innerHTML=(`구구단에 속하지 않는 단을 입력했습니다.`);
+            else
+            {for( let i=1;i<=9;i++)
+            {
+                let result=(`${num1}×${i}=${Number(num1)*i}`);
+                //p태그에 출력
+                line.innerHTML=result;
+                line=line.appendChild(padd);
+                //ul태그를 만들어서 리스트 생성하여 출력
+            }
+        }
+        }
+    </script>
+</body>
+</html>
