@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트-event</title>
+</head>
+<body>
+    <!--HTML 태그에서 어떤 이벤트가 발생-->
+    <!--onclock : 태그를 클릭하면 발생하는 이벤트-->
+    <h1 onclick="printConsole('h1')">이벤트</h1>
+    <button onclick="alert(`클릭했습니다.`)">클릭하세요</button>
+    <p onmouseenter="printConsole('p')">마우스를 올리세요</p>
+    <script>
+        //HTML 태그에서 이벤트가 발생 했을 때 실행할 내용 작성
+        //함수로 만들어 onclick이벤트에 전달
+        function printConsole(tag){
+            console.log(`${tag}태그를 눌렸습니다.`);
+        }
+    </script>
+</body>
+</html>

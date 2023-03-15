@@ -52,11 +52,11 @@
         //class명이 main인 태그의 자손 중 span 태그로 접근
         //참고로 .main.p>span도 동일하다. 왜냐하면 자식의 자식으로 내려갔기 때문
         maintextred.style.color="red"; //class명이 main인 태그 안의 span 태그에만 빨간색 적용
-        let mainp=maintextred.parentElement;
+        let mainp=maintextred.parentNode; //span태그의 부모태그(p)로 접근
         let main2=maintextred.cloneNode(true); //복제
         let main3=maintext.cloneNode(true); //복제
-        maintext.appendChild(mainp);
-        maintext.appendChild(main3);
+        maintext.append(mainp.cloneNode(true)); //이 모양이 맞다
+        maintext.appendChild(main3); //이 모양이 맞는것처럼 보이지만 관리자 모드로 보면 div안에 들어가서 틀린 경우가 된다.
     </script>
 
 </body>

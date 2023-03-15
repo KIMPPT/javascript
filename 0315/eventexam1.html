@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 함수 실습-1</title>
+</head>
+<body>
+    <p>값을 넣어주세요</p>
+    <input type="text" name="" id="input" value="아무값">
+    <button onclick="result()">확인</button>
+    <p id="textprint"></p>
+    <script>
+        let resultinput=document.querySelector("#input");
+
+        function result(){
+            let resultp=document.querySelector("#textprint");
+            resultp.innerHTML=`${input[type="text",value=""]}`;
+        }
+    </script>
+    <!--input 태그를 가져와서 value 값 가져오기-->
+    <!--button에 클릭 이벤트와 함수 작성-->
+    <!--p태그를 가져와서 값 넣어주기-->
+</body>
+</html>
