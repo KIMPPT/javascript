@@ -2,6 +2,8 @@
 on과 관련된 속성이므로 모든 요소에 사용 가능
 자주 쓰는 타입 : onload,onclick,onchange,onmouse-,onfocus
 이벤트명="함수명() 또는 함수식". 함수명을 넣은 경우 js(script)에 함수식을 작성
+예 : <button id="btn2" onclick="printTest()"></button>
+이면 onclick이 이벤트타입이고 printTest()가 이벤트 실행 시 발생할 함수이다.
 
 addEventListener : 객체나 요소의 함수에 이벤트 리스너를 전달하는 함수
 대상객체.addEventListener(이벤트명,실행할 이벤트 핸들러);
