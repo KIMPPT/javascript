@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구구단 생성-node형태</title>
 </head>
+
 <body>
     <h1>아래 숫자를 입력하면 구구단을 출력해줍니다.</h1>
-    <input type="text" name="" id="num">
+    <input type="number" name="" id="num">
     <button onclick="gugudan()">입력한 숫자의 단 확인</button>
+    <button onclick="gugudan2()">다른 출력</button>
+    <p></p>
     <script>
+        let body = document.querySelector("body");
+        let p = document.createElement("p");
         let line="";
-        let body=document.querySelector("body");
-        let p=document.createElement("p");
-        function gugudan(){
-            let dan=document.querySelector("#num").value;
-            for(let i=1;i<=9;i++)
-            {
-            line+=(`${dan}×${i}=${Number(dan)*i}<br>`);
+        function gugudan() {
+            line="";
+            for (let i = 1; i <= 9; i++) {
+                let dan = document.querySelector("#num").value;
+                line += (`${dan}×${i}=${Number(dan) * i}<br>`);
             }
-            p.innerHTML=line; //위 라인으로 만든 텍스트 값들을 p 태그에 넣음
-            body.appendChild(p); 
+            p.innerHTML = line; //위 라인으로 만든 텍스트 값들을 p 태그에 넣음
+            body.appendChild(p);
             //여기가 문제점. appendChild는 추가하는 명령어이기 때문에 2를 넣고 클릭해서 2단 출력 후 다른 숫자를 던어 단을 만들 때 2단이 남은 채로 그 뒤에 붙음
-            
+            //해결됨 : 해결방법은 for 전에 line 값을 초기화 시켜준다.
+            //이 문장의 출력은 body 바로 이전에 출력된다.(script 다음)
         }
+        function gugudan2() {
+            let padd = document.querySelector("p");
+            line="";
+            for (let i = 1; i <= 9; i++) {
+                let dan = document.querySelector("#num").value;
+                line += (`${dan}×${i}=${Number(dan) * i}<br>`);
+            }
+            padd.innerHTML = line;
+        }
+        //이런 형식으로 짜면 전 내용을 엎고 새로운 내용을 출력하게 할 수 있다.
+        //이 문장의 출력은 두번째 button 다음 p에 나온다.
     </script>
 </body>
+
 </html>

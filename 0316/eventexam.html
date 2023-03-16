@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn2" onclick="printTest()">버튼을 클릭하면 버튼안의 글자가 바뀝니다.</button>
+    <p id="p1" onmouseenter="changeColor()">마우스를 올리면 글자가 빨간색으로 바뀝니다</p>
+    <p id="p2" onmouseleave="changeColor2()">마우스를 빠져나가면 글자가 파란색으로 바뀝니다(처음은 기본값)</p>
+    <p id="p3" onmouseenter="changeColor3()" onmouseleave="changeColor4()">처음은 글자가 검은색,마우스를 올리면 빨간색, 빠져나가면 파란색</p>
+    <script>
+        let button2 = document.querySelector("#btn2");
+        function printTest() {
+            button2.style.color = "red";
+        }
+        let p1 = document.querySelector("#p1");
+        let p2 = document.querySelector("#p2");
+        let p3 = document.querySelector("#p3");
+        function changeColor() {
+            p1.style.color = "red";
+        }
+        function changeColor2() {
+            p2.style.color = "blue";
+        }
+        function changeColor3() {
+            p3.style.color = "red";
+        }
+        function changeColor4() {
+            p3.style.color = "blue";
+        }
+    </script>
+</body>
+
+</html>
