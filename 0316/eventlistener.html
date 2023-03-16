@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">함수로 이벤트 불러내기</button>
+    <p id="p2">마우스를 올리면 색이 빨간색으로 변합니다.</p>
+    <ul id="list">
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+        <li>4번째</li>
+        <li>5번째</li>
+    </ul>
+    <!--이벤트 객체를 사용하기 위한 태그-->
+    <p onclick="printText()">태그를 클릭하면 글자가 바뀝니다.</p>
+    <!--동일한 이벤트와 함수를 연결-->
+    <p id="p3">태그를 클릭하면 글자가 바뀝니다.</p>
+    <script>
+        //HTML에서 태그를 DOM 요소로 들고와서 함수로 이벤트 추가
+        let btn = document.querySelector("#btn");
+        //가져온 DOM 요소에 이벤트와 실행할 함수
+        btn.addEventListener("click", printButton);
+        //실행할 함수 작성
+        function printButton() {
+            btn.innerHTML = "버튼을 눌렸습니다"
+        }
+        //가져온 DOM 요소에 이벤트와 실행할 익명함수
+        btn.addEventListener("mouseenter", function () {
+            btn.innerHTML = "마우스를 버튼에 올렸습니다"
+        });
+        //const는 let 과 달리 변수값을 재할당 할 수 없음(유일값)
+        let p2 = document.querySelector("#p2")
+        p2.addEventListener("mouseenter", function () {
+            p2.style.color = "red";
+            //이벤트 객체를 들고 와서 backgroundColor를 gray로 수정
+            
+        })
+
+        //li와 같이 여러개의 태그에 같은 이벤트 추가 : 배열로 들고와서 for문
+        let lilist = document.querySelectorAll("#list>li");
+
+        for (let i=0;i<lilist.length;i++) {
+            //색이 랜덤으로 변경-style.color 와 Math.random()-난수 와 Math.floor()-내림
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            lilist[i].addEventListener("click", function () {
+                lilist[i].style.color = `rgb(${r},${g},${b})`;
+            })
+        }
+        //이벤트 객체를 활용할 함수 작성
+        let p3=document.querySelector("#p3");
+        //이벤트 객체는 리스너가 전달
+        //html 속성에서는 이벤트 객체 > undefined
+        p3.addEventListener("click",printText)
+        function printText(event)
+        {
+            console.log(event.target.innerHTML="값이 바뀝니다.");
+        }
+    </script>
+</body>
+
+</html>
