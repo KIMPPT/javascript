@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 생성-node형태</title>
+</head>
+<body>
+    <h1>아래 숫자를 입력하면 구구단을 출력해줍니다.</h1>
+    <input type="text" name="" id="num">
+    <button onclick="gugudan()">입력한 숫자의 단 확인</button>
+    <script>
+        function gugudan(){
+            let presult="";
+            let dan=document.querySelector("#num".value); //input 값을 받아옴
+            let body=document.querySelector("body"); //body 태그 호출용
+            let padd=document.createElement("p"); //p 태그 생성용
+            for(let i=1;i<=9;i++)
+            {
+                let padd2=padd.cloneNode(true);
+                presult.innerHTML+=`${dan}×${i}=${Number(dan)*i}`
+            }
+            body.appendChild(presult);
+        }
+    </script>
+</body>
+</html>

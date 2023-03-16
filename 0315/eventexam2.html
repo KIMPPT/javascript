@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 실습-2</title>
 </head>
+
 <body>
     <!--input 태그와 button을 이용한 이벤트 연습-->
     <p>아래 숫자를 입력하면 구구단을 출력해줍니다.</p>
@@ -17,27 +19,49 @@
         </p>
     </div>
     <script>
-        function result(){
-            let gugu=document.querySelector("#gugu"); //input 호출
-            num1=gugu.value; //input의 value값 가져옴
+        function result() {
+            let gugu = document.querySelector("#gugu"); //input 호출
+            num1 = gugu.value; //input의 value값 가져옴
             //위 두 줄을 한줄로 합칠수도 있다.
             //let gugu=document.querySelector("#gugu").value;
-            let gugudan=document.querySelector("#gugudan"); //div 부분 호출
-            let line=gugudan.firstElementChild;
-            let padd=document.createElement("p");
-            if(num1<2 || num1>9) 
-                line.innerHTML=(`구구단에 속하지 않는 단을 입력했습니다.`);
-            else
-            {for( let i=1;i<=9;i++)
-            {
-                let result=(`${num1}×${i}=${Number(num1)*i}`);
-                //p태그에 출력
-                line.innerHTML=result;
-                line=line.appendChild(padd);
-                //ul태그를 만들어서 리스트 생성하여 출력
+            let gugudan = document.querySelector("#gugudan"); //div 부분 호출
+            let line = gugudan.firstElementChild;
+            let orip=document.querySelector("#gugudan>p");
+            let padd = document.createElement("p");
+            orip.innerHTML = "";
+            if (num1 < 2 || num1 > 9)
+                line.innerHTML = (`구구단에 속하지 않는 단을 입력했습니다.`);
+            else {
+                for (let i = 1; i <= 9; i++) {
+                    orip.innerHTML += (`${num1}×${i}=${Number(num1) * i}<br>`);
+                    //이런식으로 p태그 안에 테스트를 다 추가해서 불러낼 수 있다.
+                    
+                    //padd.innerHTML+=`${num1}×${i}=${Number(num1)*i}`;
+                    //p태그에 출력
+                    /*
+                    line.innerHTML = result;//구구단 츌룍겂울 line에 삽입
+                    line2 = padd.cloneNode(true);
+                    line = gugudan.appendChild(line2);
+                    //이 식은 첫번째는 정상으로 나오지만 다른값을 입력하면 맨 위는 덮어지고 그다음에 끊어서 나오는 이상한 형태가 되어버림
+                    */
+                }
+                
             }
-        }
+            //ul태그를 만들어서 리스트 생성하여 출력
+            //1. ul 태그 생성 -createElement
+            //2. li 태그 안에 dan*1이 들어간 태그가 각각 1개씩(총 9개)생성 -innerHTML
+            //3. li 태그로 생성된 요소를 ul 태그에 추가
+            //4. ul 태그는 body에 추가 -appendChild
+            let ul = document.createElement("ul"); //ul태그 호출 생성
+            for (let i = 1; i < 10; i++) {
+                let li = document.createElement("li"); //li태그 호출 생성
+                ul.appendChild(li); //ul 태그의 자식태그로 li 생성
+                li.innerText=`${num1}×${i}=${Number(num1) * i}`; //li태그에 텍스트값 삽입
+            }
+            let bodyadd=document.querySelector("body"); //body태그 호출 생성
+            bodyadd.appendChild(ul); //body태그에 ul 자식태그 추가
         }
     </script>
 </body>
+
 </html>
