@@ -11,17 +11,19 @@
     <input type="text" name="" id="num">
     <button onclick="gugudan()">입력한 숫자의 단 확인</button>
     <script>
+        let line="";
+        let body=document.querySelector("body");
+        let p=document.createElement("p");
         function gugudan(){
-            let presult="";
-            let dan=document.querySelector("#num".value); //input 값을 받아옴
-            let body=document.querySelector("body"); //body 태그 호출용
-            let padd=document.createElement("p"); //p 태그 생성용
+            let dan=document.querySelector("#num").value;
             for(let i=1;i<=9;i++)
             {
-                let padd2=padd.cloneNode(true);
-                presult.innerHTML+=`${dan}×${i}=${Number(dan)*i}`
+            line+=(`${dan}×${i}=${Number(dan)*i}<br>`);
             }
-            body.appendChild(presult);
+            p.innerHTML=line; //위 라인으로 만든 텍스트 값들을 p 태그에 넣음
+            body.appendChild(p); 
+            //여기가 문제점. appendChild는 추가하는 명령어이기 때문에 2를 넣고 클릭해서 2단 출력 후 다른 숫자를 던어 단을 만들 때 2단이 남은 채로 그 뒤에 붙음
+            
         }
     </script>
 </body>
