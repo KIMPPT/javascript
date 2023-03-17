@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 실습-2</title>
+    <style>
+        .on {
+            text-decoration: line-through;
+            background-color:black;
+            /*자바스크립트로 class이름을 추가 할 때 전환효과 사용*/
+            transition:background 0.5s;
+        }
+
+        .ullist>li>input[type="checkbox"]:checked+span {
+            color: gray;
+            text-decoration: underline wavy;
+            transition: all 1s;
+            /*전환효과 사용가능*/
+        }
+        .img{
+            height:300px;
+            width:300px;
+            background-image:url(/image/hd.jpg);
+            background-size:cover; /*위에 정한 크기에 맞게 이미지 조절여부*/            
+        }
+        .changeimage{
+            background-image:url(/image/balloons.jpg);
+            transition:background-image 3s;
+        }
+    </style> <!--CSS만 사용해서 체크했을 때 디자인 추가-->
+</head>
+
+<body>
+    <p>체그박스를 클릭했을 때 <br> checked가 true면 글자의 색이 회색, false면 검정으로</p>
+    <ol>
+        <li id="first_list">
+            <input type="checkbox" name="" id="checkbox">
+            첫번째 리스트입니다.
+        </li>
+    </ol>
+    <ol id="checklist">
+        <li><input type="checkbox" name="" id="">1번째</li>
+        <li><input type="checkbox" name="" id="">2번째</li>
+        <li><input type="checkbox" name="" id="">3번째</li>
+    </ol>
+    <!--css를 이용하여 클릭했을 때 -->
+    <ul class="ullist">
+        <li><input type="checkbox" name="" id=""><span>첫번째</span></li>
+        <li><input type="checkbox" name="" id=""><span>첫번째</span></li>
+        <li><input type="checkbox" name="" id=""><span>세번째</span></li>
+    </ul>
+    <!--div 태그 안에 이미지를 넣어서 이미지를 클릭했을 때 다른 이미지 출력. css background-image로 바꾸기(class)-->
+    <div id="img" class="img"></div>
+    <script>
+        let list = document.querySelector("#first_list");
+        let checkbox = document.querySelector("#checkbox");
+        checkbox.addEventListener("click", check);
+
+        function check(e) {
+            const li = e.target.parentNode;
+            if (e.target.checked) {
+                li.style.color = "gray";
+                //classlist 접근, add()함수
+                li.classList.add("on"); //CSS에 작성한 클래스 추가
+            }
+            else {
+                li.style.color = "";
+                li.classList.remove("on"); //CSS에 작성한 클래스 제거
+            }
+        }
+        let checklist = document.querySelectorAll("#checklist>li>input[type='checkbox']");
+        for (let i = 0; i < checklist.length; i++) {
+            checklist[i].addEventListener("click", check);
+        }
+        //이미지를 클릭했을 때 background-image 교체
+        let image=document.querySelector("#img");
+        image.addEventListener("click",function(e)
+        {
+            //클릭했을 때 새로운 클래스 추가
+            e.target.classList.toggle("changeimage");
+            //toggle은 클릭할때마다 생성/삭제 반복
+        });
+
+    </script>
+</body>
+
+</html>

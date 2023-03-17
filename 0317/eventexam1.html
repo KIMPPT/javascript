@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 실습-1</title>
+</head>
+
+<body>
+    <!--글자를 누르면 바뀌고 한번 더 누르면 원상복귀-->
+    <h1>이벤트 실습-1</h1>
+    <p style="display:inline-block">눌려주세요</p>
+    <script>
+        let p = document.querySelector("p");
+        p.addEventListener("click", function () {
+            if (p.style.color == "") {
+                p.innerHTML = "숨겨진 단어입니다.";
+                p.style.color = "red";
+            }
+            else {
+                p.innerHTML = "눌려주세요";
+                p.style.color = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
