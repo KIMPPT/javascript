@@ -1,0 +1,43 @@
+/*태그 디자인*/
+*
+{
+    padding:0;
+    margin:0;
+}
+ul
+{
+    list-style:none;
+}
+/*div의 ul에 접근해서 li 배열을 flex로 바꿈*/
+.imagebox>.box
+{
+    width:450px;
+    display:flex;
+    margin: 0 auto;
+    /*margin: auto를 적용하고 싶다면 width 값을 정해줘야 중앙정렬이 된다.*/
+}
+/*div(.imagebox)의 ul(.box)의 li의 img(.pic)태그에 접근*/
+.imagebox>.box>li>.pic
+{
+    width:150px;
+    height:150px;
+}
+
+/*lightbox에 대한 디자인*/
+#lightbox
+{
+    width:100%;
+    height:100vh;
+    position:fixed;
+    top:0;
+    background-color:rgba(25,25,25,0.5);
+    text-align:center;
+    padding:5vh 0;
+    /*클래스를 통해서 block으로 바꾸어도 되지만 하나밖에 없기에 속성으로 직접 접근해서 수정해도 된다.*/
+    display:none;
+}
+/*lightbox의 이미지*/
+#lightbox>#image{
+    /*이미지 크기를 화면에 맞춰서 크게 출력하기 위해 사진의 가로세로중 큰 수치로 출력*/
+    height:100vh;
+}

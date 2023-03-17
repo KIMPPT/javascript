@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이트 박스</title>
+    <link rel="stylesheet" href="./lightbox.css">
+</head>
+<body>
+    <h1>이미지 박스</h1>
+    <p>사진을 클릭하면 사진이 전체화면으로 보입니다.</p>
+    <p>섬네일은 작은 사진으로, 클릭하면 큰 사이즈로 사용</p>
+    <div class="imagebox">
+        <ul class="box">
+            <li>
+                <!--src : 처음에 보이는 사진(썸네일)-작은 사이즈-->
+                <!--data-src : 클릭했을 때 보이는 사진(원본)-큰 사이즈-->
+                <!--data- 속성 : 태그에는 영향을 미치지 않지만, DOM 속성으로 값을 전달 할 수 있다.-->
+                <img class="pic" src="./image/pic1.jpg" data-src="./image/pic1.jpg">
+            </li>
+            <li>
+                <img class="pic" src="./image/pic2.jpg" data-src="./image/pic2.jpg">
+            </li>
+            <li>
+                <img class="pic" src="./image/pic3.jpg" data-src="./image/pic3.jpg">
+            </li>
+        </ul>
+    </div>
+    <!--큰 이미지가 나오는 공간-->
+    <div id="lightbox">
+        <img src="./image/pic1.jpg" alt="" id="image">
+    </div>
+    <script src="./lightbox.js"></script>
+</body>
+</html>
