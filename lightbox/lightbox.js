@@ -10,10 +10,12 @@ function showpic(e)
 {
     //이미지 수정(이 문장이 없으면 첫번째 이미지만 나옴)
     //date-이름 작성한 갓은 dataset을 통해 접근. 밑의 작업을 통해 이미지 위치를 찾아낸다.
-    let imgsearch=e.target.dataset.src;
-    console.dir(imgsearch);
+    let img=e.target.dataset.src;
+    //여기에서 e.target은 함수를 받는 #lightbox(div)의 자식인 #image(img)를 뜻함
+    console.dir(e.target); //여기서 img태그의 값을 관리자 모드를 통해 볼 수 있다. 그 중에서 img 태그 중 변경할 부분인 src 부분을 찾다보면 dataset이 보이고 하위로 내려보면 src가 나오게 된다.
+    console.dir(img);
     //이미지 위치값을 가져와서 lightbox의 이미지에 추가
-    lightbox.firstElementChild.src=imgsearch;
+    lightbox.firstElementChild.src=img;
     //라이트 박스 모임
     lightbox.style.display="block";
 }
