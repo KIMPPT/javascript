@@ -1,0 +1,35 @@
+/*기본 태그 디자인*/
+*
+{
+    margin:0;
+    padding:0;
+}
+ul
+{
+    list-style:none;
+}
+a
+{
+    text-decoration:none;
+    color:black;
+}
+/*tab 메뉴 */
+/*tab 메뉴의 li들을 나열*/
+.tab_menu>.list
+{
+    display:flex;
+    height:170px; /*높이를 지정해서 아래쪽 태그를 보이도록*/
+}
+/*컨텐츠*/
+.tab_menu .list li:first-child .content
+{
+    display:block;
+}
+.tab_menu .list li .content
+{
+    display:none;
+    position:absolute; /*밑에 나오는 태그들이 가려짐*/
+    width:300px;
+    height:150px;
+    background-color:aqua;
+}
