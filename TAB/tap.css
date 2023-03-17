@@ -6,12 +6,12 @@
 }
 ul
 {
-    list-style:none;
+    list-style:none; /*ul의 점구분을 없앰*/
 }
 a
 {
-    text-decoration:none;
-    color:black;
+    text-decoration:none; /*밑줄 제거*/
+    color:black; /*색을 검은색으로 고정*/
 }
 /*tab 메뉴 */
 .tab_menu
@@ -21,18 +21,20 @@ a
 /*tab 메뉴의 li들을 나열*/
 .tab_menu>.list
 {
-    display:flex;
+    display:flex; /*탭 메뉴 리스트를 flex로 한줄에 표시되도록*/
+    /*justify-content의 경우 전체화면에서 한다면 적용해도 되는데 지금은 사이즈가 정해져 있어서 안쓴다.*/
     height:170px; /*높이를 지정해서 아래쪽 태그를 보이도록*/
 }
 /*a 버튼*/
 .tab_menu>.list>li>.btn
 {
-    padding:0px 50px;
-    font-size:1.2rem;
+    padding:0px 50px; /*a태그들은 간격 띄우기*/
+    font-size:1.2rem; /*글자 크기를 늘림*/
 }
 /*a 버튼을 눌렸을 때 디자인*/
 .tab_menu>.list>li.on>.btn
 {
+    /*눌렸을 때와 아닐때 구분을 위해 색 투입*/
     color:green;
     background-color:yellowgreen;
 }
@@ -41,17 +43,17 @@ a
 /*버튼을 눌렸을 때 보이는 화면*/
 .tab_menu .list li.on>.content
 {
-    display:block;
+    display:block; /*밑에 안보이는 값 중 class="on"이 추가된 부분만 보이게 수정*/
 }
 .tab_menu .list li .content
 {
-    display:none;
+    display:none; /*모든 값들을 일단 안보이게 한 뒤 리스트를 클릭하면 보이도록 조치*/
     position:absolute; /*밑에 나오는 태그들이 가려짐*/
     left:0; /*지금은 ttab 하나만 구현이라 사용*/
     margin-left:10px; /*감싸고 있는 margin 값 추가*/
-    width:500px;
+    width:500px; 
     height:150px;
-    box-sizing:border-box;
-    padding:10px;
+    box-sizing:border-box; /*padding값을 넣어도 미리 지정한 높이 값이 변경되지 않게 border-box로 지정*/
+    padding:10px; /**/
     background-color:aqua;
 }
