@@ -14,14 +14,32 @@ a
     color:black;
 }
 /*tab 메뉴 */
+.tab_menu
+{
+    margin:10px;
+}
 /*tab 메뉴의 li들을 나열*/
 .tab_menu>.list
 {
     display:flex;
     height:170px; /*높이를 지정해서 아래쪽 태그를 보이도록*/
 }
+/*a 버튼*/
+.tab_menu>.list>li>.btn
+{
+    padding:0px 50px;
+    font-size:1.2rem;
+}
+/*a 버튼을 눌렸을 때 디자인*/
+.tab_menu>.list>li.on>.btn
+{
+    color:green;
+    background-color:yellowgreen;
+}
 /*컨텐츠*/
-.tab_menu .list li:first-child .content
+
+/*버튼을 눌렸을 때 보이는 화면*/
+.tab_menu .list li.on>.content
 {
     display:block;
 }
@@ -29,7 +47,11 @@ a
 {
     display:none;
     position:absolute; /*밑에 나오는 태그들이 가려짐*/
-    width:300px;
+    left:0; /*지금은 ttab 하나만 구현이라 사용*/
+    margin-left:10px; /*감싸고 있는 margin 값 추가*/
+    width:500px;
     height:150px;
+    box-sizing:border-box;
+    padding:10px;
     background-color:aqua;
 }
