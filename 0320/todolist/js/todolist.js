@@ -8,10 +8,11 @@ let todoform = document.querySelector("#memoform");
 todoform.addEventListener("submit", todoadd);
 //todo를 추가하는 함수
 function todoadd(e) {
-  e.preventDefault();
+  e.preventDefault(); //초기화 시켜주기
   //input태그의 값을 가져와서 ul의 li로 추가하기
+
   //todoform.firstelementchild는 input type:text를 들고옴
-  let todovalue = todoform.firstElementChild.value;
+  let todovalue = todoform.firstElementChild.value; //그 안에서 입력한 값(value)를 받아 옴
   //li 태그 생성 & ul 태그를 찾아서 추가
   let li = document.createElement("li");
   //li 태그에 체크박스 추가
@@ -22,11 +23,15 @@ function todoadd(e) {
   //li 태그에 x 버튼 추가
   let but = document.createElement("button");
   but.innerHTML = "X";
+  //시간을 추가하기 위한 span 태그
+  let time=document.createElement("span");
+  time.innerHTML=getClock();
   //li 태그 안에 위 3개를 추가
   li.appendChild(check);
   li.appendChild(text);
+  li.appendChild(time);
   li.appendChild(but);
-  //  document.querySelector("#todolist")=ul
+  //  document.querySelector("#todolist")=ul. ul에 li를 추가
   document.querySelector("#todolist").appendChild(li);
   //input의 value값을 "" 으로 바꿈 - 입력을 누르고 난 뒤에 값이 남아있지 않게 만듬
     todoform.firstElementChild.value="";

@@ -16,11 +16,15 @@ function getClock(){
     //n은 길이, k는 빈 자리에 들어갈 문자. 숫자는 들어갈 수 없다(입력할려고 해도 함수가 안나옴)
     //clock에 현재 시간 출력
     clock.innerHTML=`${hour}:${minute}:${second}`;
+    //return 을 통해 시간을 문자열로 돌려 줄 수 있다.
+    //return 값을 이용해서 clock.innerHTML=getClock();
+    return `${hour}:${minute}:${second}`;
 }
-
 
 //타이머 함수(interval)을 사용해서 1초마다 시간을 받아오게 작성
 //setInterval(함수,delay시간[ms단위]). new Date() 부터 innerHTML까지 function으로 묶어주면 된다.
-setInterval(getClock,1000);
+setInterval(function(){
+    clock.innerHTML=getClock();
+},1000);
 //타이머는 1초 뒤에 실행하기 때문에 화면에 바로 출력하기 위한 함수 호출
-getClock(); 
+clock.innerHTML=getClock();

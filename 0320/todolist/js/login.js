@@ -17,6 +17,9 @@ function onlogin(event) {
   greeting.innerHTML = `환영합니다. ${loginid.value}님`;
   //화면에 글자를 보여주기 위해 클래스 제거 
   greeting.classList.remove("hidden");
+  //할일 입력창과 할일 리스트 보이게 하기 위해 클래스 제거
+  document.querySelector("#memoform").classList.remove("hidden");
+  document.querySelector("#todolist").classList.remove("hidden");
   //로그인 창을 보이지 않기 위한 class 추가
   loginform.classList.add("hidden");
   //위 2개는 css 에서 class이름이 hidden인 경우 style:none을 적용한 것을 이용해 활용했음
