@@ -40,7 +40,7 @@ function todoadd(e) {
     //button에 클릭이벤트 추가
     but.addEventListener("click",tododelete);
 }
-//check에 들어가는 todocheck함수 작성 - 밖에 두어도 안에 접근이 가능하다. 안에 작성한 것을 밖에 적용은 안된다.
+//check에 들어가는 todocheck함수 작성 - 밖에 두어도 안에 접근이 가능하다. 안에 작성한 것을 밖에 적용은 return은 안썼다면 불가능하다.
 function todocheck(e){
     //이벤트 객체를 통해서 이벤트가 실행된 태그 찾아서 값 사용
     let check=e.target; //매개변수는 버튼이 되게 된다. 그러므로 타겟 또한 버튼 태그가 된다

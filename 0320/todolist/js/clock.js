@@ -19,6 +19,9 @@ function getClock(){
     //return 을 통해 시간을 문자열로 돌려 줄 수 있다.
     //return 값을 이용해서 clock.innerHTML=getClock();
     return `${hour}:${minute}:${second}`;
+    //따로 만들면서 밑에를 고친 이유는 return 값이 생겼고 이 값을 받아오는 경우를 생각하면서 만든 것이다.
+    //그렇다고 return 값을 만들었다고 밑에도 고칠 이유는 없다. 이미 위에서 clock.innerHTML을 만들어 놓았기 때문에 받아도 상관없다.
+    //위의 innerHTML이 없다면 기존 식을 쓸 수 없다. 왜냐하면 innerHTML이 없으니 clock 안에 들어가는 html텍스트가 없기 때문이다.                                                                                                                                                                                                                                                                                                                                                                                  
 }
 
 //타이머 함수(interval)을 사용해서 1초마다 시간을 받아오게 작성
@@ -26,5 +29,7 @@ function getClock(){
 setInterval(function(){
     clock.innerHTML=getClock();
 },1000);
-//타이머는 1초 뒤에 실행하기 때문에 화면에 바로 출력하기 위한 함수 호출
+/*setInterval(getClock,1000);*/
+//타이머는 무조건 1초 뒤에 실행하기 때문에 화면에 바로 출력하기 위한 함수 호출
 clock.innerHTML=getClock();
+/*getClock();*/
