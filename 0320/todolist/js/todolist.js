@@ -43,7 +43,7 @@ function todoadd(e) {
 //check에 들어가는 todocheck함수 작성 - 밖에 두어도 안에 접근이 가능하다. 안에 작성한 것을 밖에 적용은 안된다.
 function todocheck(e){
     //이벤트 객체를 통해서 이벤트가 실행된 태그 찾아서 값 사용
-    let check=e.target;
+    let check=e.target; //매개변수는 버튼이 되게 된다. 그러므로 타겟 또한 버튼 태그가 된다
     let li=check.parentNode; //li태그에 접근하기 위해서 check(checkbox)의 부모태그로 찾음
     if(check.checked) //체크박스의 체크 유무에 따라 표기차이 생성
     {
@@ -52,7 +52,6 @@ function todocheck(e){
     else
     {
         li.style.color="";
-
     }
 }
 

@@ -50,7 +50,7 @@ ul{
 }
 #todolist>li>span
 {
-    position:absolute;
+    position:absolute; /*버튼을 이미 float:right로 정렬했기 때문에 시간은 absolute로 새로 맞춘다*/
     right:150px;
     font-size:0.7rem;
     margin-top:4px;
@@ -66,14 +66,14 @@ input[type="text"]
 }
 input[type="text"]:focus
 {
-    outline:none; /*커서를 가져다 클릭했을 때 보이는 테두리를 없앰*/
-    
+   outline:none; /*커서를 가져다 클릭했을 때 보이는 테두리를 없앰*/
 }
 input[type="text"]::placeholder{
     color:white;
 } /*입력 전 표시에 대한 디자인*/
 /*버튼 디자인*/
-input[type="text"]+input[type="submit"]/*text타입 input 형제 태그로 submit타입 input타입으로 접근*/
+input[type="text"]+input[type="submit"]
+/*text타입 input 형제 태그로 submit타입 input타입으로 접근. 로그인 submit이랑 할 일 입력 submit 둘 다 적용된다*/
 {
 background-color:lightblue;
 border:none;
