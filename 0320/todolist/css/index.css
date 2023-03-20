@@ -1,10 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap');
+/*태그에 대한 디자인*/
 h1 {
+    font-size:2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 10px 0;
     color: white;
-}
-/*display를 아예 감출 class를 추가해줌. 이 class를 js에서 추가/제거를 제어해서 표현할 예정*/
-.hidden {
-    display: none;
 }
 ul{
     color:white;
+}
+/*각각 id에 따른 디자인*/
+#clock
+{
+    text-align:center;
+    font-size:2.5rem;
+    margin:30px 0;
+    text-shadow:0 0 20px black;
+}
+#greeting
+{
+    text-align:center;
+    color:aqua;
+}
+#loginform, #memoform
+{
+    text-align:center;
+}
+/*todolist 디자인*/
+#todolist{
+    margin:auto;
+    max-width:500px;
+    margin-top:10px;
+    padding:0 15px;
+}
+#todolist>li{
+    font-family: 'Noto Serif KR', serif;
+    clear:both;
+    margin:10px 0;
+}
+#todolist>li>button
+{
+    float:right;
+    background-color:transparent;
+    border:solid black 1px;
+    cursor: pointer; /*커서를 가져다 대면 포인터가 바뀐다.*/
+    border-radius:20px;
+    padding:2px 5px;
+}
+#todolist>li>span
+{
+    position:absolute;
+    right:150px;
+    font-size:0.7rem;
+    margin-top:4px;
+}
+/*input[type="text"]와 [type="submit] 스타일*/
+input[type="text"]
+{
+    background-color:transparent; /*부모의 스타일 : 투명*/
+    border:none;
+    border-bottom:3px white solid;
+    color:white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+input[type="text"]:focus
+{
+    outline:none; /*커서를 가져다 클릭했을 때 보이는 테두리를 없앰*/
+    
+}
+input[type="text"]::placeholder{
+    color:white;
+} /*입력 전 표시에 대한 디자인*/
+/*버튼 디자인*/
+input[type="text"]+input[type="submit"]/*text타입 input 형제 태그로 submit타입 input타입으로 접근*/
+{
+background-color:lightblue;
+border:none;
+border-radius:20px;
+padding:5px 7px;
+color:black;
+}
+/*버튼에 마우스 올렸을 때 디자인*/
+input[type="text"]+input[type="submit"]:hover
+{
+ background-color:lightcoral;
+}
+
+/*display를 아예 감출 class를 추가해줌. 이 class를 js에서 추가/제거를 제어해서 표현할 예정*/
+.hidden {
+    display: none;
 }
