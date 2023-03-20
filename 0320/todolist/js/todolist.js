@@ -25,11 +25,11 @@ function todoadd(e) {
   but.innerHTML = "X";
   //시간을 추가하기 위한 span 태그
   let time=document.createElement("span");
-  time.innerHTML=getClock();
+  time.innerHTML=getClock(); //clock.js에서 만든 시간 함수를 불러 올 수 있다.
   //li 태그 안에 위 3개를 추가
   li.appendChild(check);
   li.appendChild(text);
-  li.appendChild(time);
+  li.appendChild(time); //시간추가
   li.appendChild(but);
   //  document.querySelector("#todolist")=ul. ul에 li를 추가
   document.querySelector("#todolist").appendChild(li);
