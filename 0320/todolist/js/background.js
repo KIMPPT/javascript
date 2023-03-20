@@ -5,7 +5,7 @@
 let images=["0.jpg","1.jpg","2.jpg"];
 let randomindex=Math.floor(Math.random()*images.length);
 //랜덤 뒤에 곱하는 수를 고정하면 이미지가 늘어나거나 줄어 들 때 수동으로 조절해야 하기 때문에 배열의 길이를 넣으면 자동으로 조절이 됨
-let body=document.querySelector("body");
+let body=document.querySelector("body"); //body태그에 접근하기 위한 변수 추가
 body.style.backgroundImage=`url(/0320/todolist/image/${images[randomindex]})`;
 //이미지를 위 image배열의 randomindex(정수)로 받아와 출력하게 만듬
 body.style.backgroundSize="cover";

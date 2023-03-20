@@ -1,7 +1,7 @@
 h1 {
     color: white;
 }
-
+/*display를 아예 감출 class를 추가해줌. 이 class를 js에서 추가/제거를 제어해서 표현할 예정*/
 .hidden {
     display: none;
 }

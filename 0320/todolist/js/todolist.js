@@ -28,6 +28,31 @@ function todoadd(e) {
   li.appendChild(but);
   //  document.querySelector("#todolist")=ul
   document.querySelector("#todolist").appendChild(li);
-  //input의 value값을 "" 으로 바꿈
+  //input의 value값을 "" 으로 바꿈 - 입력을 누르고 난 뒤에 값이 남아있지 않게 만듬
     todoform.firstElementChild.value="";
+    //check에 클릭이벤트 추가
+    check.addEventListener("click",todocheck);
+    //button에 클릭이벤트 추가
+    but.addEventListener("click",tododelete);
+}
+//check에 들어가는 todocheck함수 작성 - 밖에 두어도 안에 접근이 가능하다. 안에 작성한 것을 밖에 적용은 안된다.
+function todocheck(e){
+    //이벤트 객체를 통해서 이벤트가 실행된 태그 찾아서 값 사용
+    let check=e.target;
+    let li=check.parentNode; //li태그에 접근하기 위해서 check(checkbox)의 부모태그로 찾음
+    if(check.checked) //체크박스의 체크 유무에 따라 표기차이 생성
+    {
+        li.style.color="lightgray";
+    }
+    else
+    {
+        li.style.color="";
+
+    }
+}
+
+//버튼에 클릭 이벤트 추가. X 버튼을 클릭하면 해당 li 삭제 : remove();
+function tododelete(e){
+    let li=e.target.parentNode; //e.target까지만 하면 button 태그로 접근함. 여기에 부모(상위)태그 접근인 parentNode를 써서 li로 접근함
+    li.remove();
 }

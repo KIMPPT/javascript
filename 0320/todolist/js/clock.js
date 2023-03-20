@@ -23,4 +23,4 @@ function getClock(){
 //setInterval(함수,delay시간[ms단위]). new Date() 부터 innerHTML까지 function으로 묶어주면 된다.
 setInterval(getClock,1000);
 //타이머는 1초 뒤에 실행하기 때문에 화면에 바로 출력하기 위한 함수 호출
-getClock();
+getClock(); 
