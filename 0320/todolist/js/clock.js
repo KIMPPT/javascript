@@ -8,11 +8,11 @@ let clock=document.querySelector("#clock");
 //숫자를 date()를 통해 값 수정
 //타이머 함수의 콜백함수로 사용하기 위해 함수로 작성
 function getClock(){
-    let date=new Date();
+    let date=new Date(); //생성자로 호출할 경우 새로운 Date 객체 반환
     let hour=String(date.getHours()).padStart(2,"0");
     let minute=String(date.getMinutes()).padStart(2,"0");
     let second=String(date.getSeconds()).padStart(2,"0");
-    //String.padStart(n,k) : string(문자열) 길이를 고정하고 시작을 지정한 문자로 왼쪽에서부터 채워 길이를 만족시키는 새로운 문자열로 반환.
+    //String.padStart(n,k) : string(문자열) 길이가 n보다 작을 경우 문자열의 왼쪽에서부터 k(문자)를 넣는 함수
     //n은 길이, k는 빈 자리에 들어갈 문자. 숫자는 들어갈 수 없다(입력할려고 해도 함수가 안나옴)
     //clock에 현재 시간 출력
     clock.innerHTML=`${hour}:${minute}:${second}`;
