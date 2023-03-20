@@ -1,0 +1,26 @@
+//시계 값이 실시간으로 변함
+//현재 시간을 들고와도 자동으로 값이 변하지 않음
+//date() 로 현재 시간을 받아옴
+//값을 새로 받아오면 바뀜 > new Date() 값을 새로 할당
+//1초마다 new Date()의 값을 할당
+//타이머 함수인 interval() 사용
+let clock=document.querySelector("#clock");
+//숫자를 date()를 통해 값 수정
+//타이머 함수의 콜백함수로 사용하기 위해 함수로 작성
+function getClock(){
+    let date=new Date();
+    let hour=String(date.getHours()).padStart(2,"0");
+    let minute=String(date.getMinutes()).padStart(2,"0");
+    let second=String(date.getSeconds()).padStart(2,"0");
+    //String.padStart(n,k) : string(문자열) 길이를 고정하고 시작을 지정한 문자로 왼쪽에서부터 채워 길이를 만족시키는 새로운 문자열로 반환.
+    //n은 길이, k는 빈 자리에 들어갈 문자. 숫자는 들어갈 수 없다(입력할려고 해도 함수가 안나옴)
+    //clock에 현재 시간 출력
+    clock.innerHTML=`${hour}:${minute}:${second}`;
+}
+
+
+//타이머 함수(interval)을 사용해서 1초마다 시간을 받아오게 작성
+//setInterval(함수,delay시간[ms단위]). new Date() 부터 innerHTML까지 function으로 묶어주면 된다.
+setInterval(getClock,1000);
+//타이머는 1초 뒤에 실행하기 때문에 화면에 바로 출력하기 위한 함수 호출
+getClock();

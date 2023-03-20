@@ -10,6 +10,3 @@ let body=document.querySelector("body");
 body.style.backgroundImage=`url(/0320/todolist/image/${images[randomindex]})`;
 //이미지를 위 image배열의 randomindex(정수)로 받아와 출력하게 만듬
 body.style.backgroundSize="cover";
-
-//시계 값이 실시간으로 변함
-
