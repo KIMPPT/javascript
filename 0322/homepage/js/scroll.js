@@ -4,8 +4,16 @@
 //네비게이션 바
 let nav=document.querySelector("#nav");
 
+/*스크롤 이벤트
+스크롤의 Y[높이] 위치 : scrollY
+스크롤 길이 : 
+화면의 크기 : innerHeight
+*/
 window.addEventListener("scroll",function()
 {
-    nav.classList.add("scrollon");
     //스크롤이 되면 scrollon 클래스 추가
+    //200이상 스크롤이 되면 scrollon 클래스 추가
+    if(window.scrollY>=200)nav.classList.add("scrollon");
+    //scrollY가 200 미만이면 secrollon 클래스 제거
+    else nav.classList.remove("scrollon");
 })

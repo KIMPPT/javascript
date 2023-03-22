@@ -1,4 +1,8 @@
 /*태그 디자인*/
+html
+{
+    scroll-behavior: smooth;
+}
 a{
     color:black;
     text-decoration: none;
@@ -8,6 +12,7 @@ a{
 {
     position:fixed;
     width:100vw;
+    z-index:100;
 }
 .nav
 {
@@ -16,6 +21,7 @@ a{
     padding:0 20px;
     align-items:center;
     border-bottom:1px black solid;
+    transition:all 1s;
 }
 .nav-menu
 {
@@ -53,6 +59,7 @@ section
 .banner{
     height:100vh;
 }
+
 /*footer*/
 .footer
 {
