@@ -1,6 +1,7 @@
 /*태그 디자인*/
 html
 {
+    /*스크롤을 부드럽게*/
     scroll-behavior: smooth;
 }
 a{
