@@ -1,14 +1,48 @@
 /*태그 디자인*/
-
+a{
+    color:black;
+    text-decoration: none;
+}
 /*header와 nav*/
 .header
 {
-   background-color: aqua;
+    position:fixed;
+    width:100vw;
 }
 .nav
 {
-    height:80px;
-    background-color: beige;
+    display:flex;
+    justify-content:space-between;
+    padding:0 20px;
+    align-items:center;
+    border-bottom:1px black solid;
+}
+.nav-menu
+{
+    display:flex;
+}
+.nav-menu>li
+{
+    margin:35px 20px;
+    /*li 태그 안에 있는 모든 텍스트가 영향*/
+    font-size:1.2rem;
+}
+.logo
+{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+/*스크롤 이벤트가 발생했을 때 바뀌는 네이게이션 디자인*/
+.nav.scrollon
+{
+    color:white;
+    background-color: black;
+    transition:all 1s;
+}
+.nav.scrollon li>a
+{
+    color:white;
+    background-color: black;
 }
 /*main-section*/
 section
