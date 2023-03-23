@@ -3,7 +3,8 @@
 
 //네비게이션 바
 let nav=document.querySelector("#nav");
-
+//섹션2 인트로
+let intro=document.querySelector("#intro");
 /*스크롤 이벤트
 스크롤의 Y[높이] 위치 : scrollY
 스크롤 길이 : 
@@ -13,7 +14,11 @@ window.addEventListener("scroll",function()
 {
     //스크롤이 되면 scrollon 클래스 추가
     //200이상 스크롤이 되면 scrollon 클래스 추가
-    if(window.scrollY>=200)nav.classList.add("scrollon");
+    if(window.scrollY>=200)
+    {
+        nav.classList.add("scrollon");
+        intro.classList.add("scrollon");
+    }
     //scrollY가 200 미만이면 secrollon 클래스 제거
     else nav.classList.remove("scrollon");
 })
