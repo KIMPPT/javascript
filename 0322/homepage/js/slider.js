@@ -11,15 +11,26 @@ let currSlide=1;
 //버튼을 눌렸을 때 left 값 변경
 nextButton.addEventListener("click",function()
 {
-    if(currSlide<maxSlide)
+    currSlide++
+    if(currSlide>maxSlide)
     {
-        currSlide++; //2이면 -100%, 3이면 -200%, 4이면 -300%
+        currSlide=1;
+        for(let i=0;i<sliderItems.length;i++)
+        {
+            sliderItems[i].style.left=`0%`;
+        }
+    }
+    else if(currSlide<=maxSlide)
+    {
+         ;//2이면 -100%, 3이면 -200%, 4이면 -300%
         //sliderItems를 통해서 모든 left 값 이동
+        
         for(let i=0;i<sliderItems.length;i++)
         {
             sliderItems[i].style.left=`${100+(-100)*currSlide}%`;
         }
     }
+
 })
 prevButton.addEventListener("click",function()
 {

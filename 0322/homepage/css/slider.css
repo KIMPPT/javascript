@@ -1,6 +1,7 @@
 /*slider디자인*/
 .slider
 {
+    color:white;
     position:relative;
     display:flex;
     flex-wrap:nowrap;
@@ -19,6 +20,7 @@
     /*left의 위치를 0%,-100%,-200% 이용하여 이동*/
     left:0;
     transition:left 1s;
+    
 }
 
 /*slider-button 디자인*/
