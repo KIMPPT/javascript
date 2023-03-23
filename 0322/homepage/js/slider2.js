@@ -60,7 +60,8 @@ for(let i=0;i<slider2Items.length;i++)
     let dot=document.createElement("div");
     dot.classList.add("dot");
     dots.appendChild(dot);
-    //dots.children[0].classList.add("on"); 맨 처음 동그라미 미리 색칠해두고 싶다면 추가
+    dots.children[0].classList.add("on");
+    //맨 처음 동그라미 미리 색칠해두고 싶다면 추가
     //dot에 이벤트 리스너 추가
     dot.addEventListener("click",function(e){
         //버튼을 클릭했을 때 슬라이더의 left 값이 수정

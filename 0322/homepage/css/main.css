@@ -61,7 +61,9 @@ a{
 section
 {
     height:400px;
+    /*
     border:1px solid black;
+    border 부분을 확인했기 때문에 마지막에 제거*/
 }
 .banner{
     height:100vh;
@@ -163,6 +165,11 @@ animation-iteration-count: infinite;/*반복횟수*/
 }
 
 /*섹션4 뉴스*/
+.news-scroll>h1
+{
+    text-align:center;
+    margin-top:100px;
+}
 /*뉴스 카드*/
 .news-cards
 {
@@ -224,7 +231,15 @@ animation-iteration-count: infinite;/*반복횟수*/
     transition:all 0.5s;
 }
 /* scroll이 추가되었을 때 보이는 전환효과*/
-
+.news-scroll{
+    opacity:0;
+    transform:translateY(40px);
+}
+.news-scroll.scrollon{
+    opacity:1;
+    transform:translateY(0);
+    transition:all 1s;
+}
 /*카드 이미지*/
 
 
@@ -255,4 +270,7 @@ nth-child 사용할 때는 그 시작점에 넣어주기
 {
     height:200px;
     background-color: black;
+    color:white;
+    padding:40px 80px;
+    display:flex;
 }
