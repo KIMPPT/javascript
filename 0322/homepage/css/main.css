@@ -40,6 +40,10 @@ a{
     /*li 태그 안에 있는 모든 텍스트가 영향*/
     font-size:1.2rem;
 }
+.nav-menu>li>a, .nav>.logo
+{
+    color:white;
+}
 .logo
 {
     font-size:1.5rem;
@@ -49,13 +53,15 @@ a{
 .nav.scrollon
 {
     color:white;
-    background-color: black;
+    background-color: rgba(0,255,0,0.5);
     transition:all 1s;
 }
 .nav.scrollon li>a
 {
     color:white;
-    background-color: black;
+    /* 확인해본 결과 이 값은 굳이 필요 없음
+    background-color: rgba(0,0,0);
+    */
 }
 /*main-section*/
 section

@@ -42,9 +42,11 @@ for(let i=0;i<slider2Buttons.length;i++)
         for(let i=0;i<slider2Buttons.length;i++)
         {
             slider2Buttons[i].classList.remove("on");
+            dots.children[i].classList.remove("on"); //그림 밑 점 부분에도 적용
         }
         //현재 태그에 on class 추가
         e.target.classList.add("on");
+        dots.children[i].classList.add("on"); //그림 밑 점 부분에도 적용
     })
 }
 
@@ -77,10 +79,12 @@ for(let i=0;i<slider2Items.length;i++)
         for(let i=0;i<dots.children.length;i++)
         {
             dots.children[i].classList.remove("on");
+            slider2Buttons[i].classList.remove("on"); //그림 옆 버튼에도 적용
         }
         //현재 dot은 무엇? 이벤트 객체
         //e.target.classList.add()
         e.target.classList.add("on");
+        slider2Buttons[i].classList.add("on"); //그림 옆 버튼에도 적용
     }
     )
 }

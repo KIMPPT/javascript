@@ -12,7 +12,9 @@
 /*slider2 item*/
 .slider2-item{
     width:100%;
+    /*
     height:100vh;
+    높이 지정을 숨겨서 사이즈에 맞게 그림이 들어가도록 만듬*/
     /*flex-shrink:flex의 컨테이너보다 item 크기가 클 때 넓이를 바꾸지 않게 사용*/
     flex-shrink:0;
     /*슬라이더 아이템의 위치를 옮김*/
