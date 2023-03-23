@@ -50,3 +50,24 @@ right:10px;
     background-image:url(../image/hot.jpg);
     background-size: cover;
 }
+/*슬라이더 dot의 모양*/
+.slider2>.slider2-dots
+{
+    position:absolute;
+    display:flex;
+    left:35%;
+    bottom:20px;
+}
+.slider2>.slider2-dots>.dot{
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin:0 10px;
+}
+.slider2>.slider2-dots>.dot:hover,
+.slider2>.slider2-dots>.dot.on
+{
+    background-color: white;
+}
