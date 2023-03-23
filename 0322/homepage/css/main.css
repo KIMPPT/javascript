@@ -136,9 +136,118 @@ animation-iteration-count: infinite;/*반복횟수*/
     display:grid;
     grid-template-columns: 2fr 3fr;
 }
+.pictures>.pictures-wrap
+{
+    padding:20px 30px;
+}
+/*버튼 디자인*/
+.pictures>.pictures-wrap .pictures-buttons a
+{
 
+    padding:10px 20px;
+    border-radius:5px;
+    font-size:1.2rem;
+    font-weight:bold;
+}
+.pictures>.pictures-wrap .pictures-buttons a.on
+{
+    background-color: black;
+    color:white;
+    transition: all 0.5s
+}
+
+/* */
+.pictures>.pictures-wrap>.pictures-explain>p
+{
+    margin-bottom:25px;
+}
 
 /*섹션4 뉴스*/
+/*뉴스 카드*/
+.news-cards
+{
+    display:flex;
+    justify-content: space-between;
+    /*
+    display:grid로 넣는다면 아래처럼 넣어주면 된다.
+    display:grid;
+    grid-template-columns:repeat(1fr,4);
+    gap: 10px;
+    */
+    margin:0 20px;
+
+}
+.card
+{
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    overflow:hidden; /* 밑의 이미지 감싸는 부분이 튀어 나온 것을 방지해줌*/
+    
+}
+.card>.card-image-wrap
+{
+    height:150px;
+    background-color: gray;
+    overflow:hidden; /*이미지에 마우스를 가져다 댔을 때 1.2배 확대되게 했는데 이 과정에서 이미지 크기가 커져서 넘쳐나오는 것을 방지*/
+}
+/*카드 글자*/
+.card>.card-text
+{
+    padding:20px;
+}
+.card>.card-text>h3{
+    font-size:1.3rem;
+    font-weight: bold;
+    margin:20px 0;
+}
+.card>.card-text>p
+{
+    font-weight: bold;
+    color:blue;
+}
+.card>.card-text>span
+{
+    float:right;
+    color:gray;
+}
+.card>.card-image-wrap>.card-image
+{
+    height:inherit;
+    background-size:cover;
+
+}
+/*카드에 마우스를 올렸을 때 전환 효과*/
+.card:hover>.card-image-wrap>.card-image
+{
+    transform:scale(1.2);
+    filter:brightness(0.7);
+    transition:all 0.5s;
+}
+/* scroll이 추가되었을 때 보이는 전환효과*/
+
+/*카드 이미지*/
+
+
+
+/* card-image-whap 안의 cardi-image가 첫번째인 것 이기 때문에 모두 선택된다.
+nth-child 사용할 때는 그 시작점에 넣어주기
+.card>.card-image-wrap>.card-image:nth-child(1)
+{
+    background-image: url(../image/balloons.jpg);
+}
+*/
+
+.card:nth-child(1)>.card-image-wrap>.card-image
+{
+    background-image: url(../image/balloons.jpg);
+}
+.card:nth-child(2)>.card-image-wrap>.card-image
+{
+    background-image: url(../image/hd.jpg);
+}.card:nth-child(3)>.card-image-wrap>.card-image
+{
+    background-image: url(../image/hot.jpg);
+}
 
 
 /*footer*/

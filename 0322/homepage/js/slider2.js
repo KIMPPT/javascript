@@ -36,7 +36,15 @@ for(let i=0;i<slider2Buttons.length;i++)
         //배열.forEach(function(배열의 값,인덱스){});
         slider2Items.forEach(function(item,index){
             item.style.left=`${i*(-100)}%`;
+            console.log(index);
         });
+        //a 태그의 모든 class 이름 중 on을 제거
+        for(let i=0;i<slider2Buttons.length;i++)
+        {
+            slider2Buttons[i].classList.remove("on");
+        }
+        //현재 태그에 on class 추가
+        e.target.classList.add("on");
     })
 }
 
@@ -77,3 +85,4 @@ for(let i=0;i<slider2Items.length;i++)
 }
 let slider2=document.querySelector("#slider2"); //id이름이 slider2인 태그 들고옴(class 이름도 같아서 .을 써도 무관)
 slider2.appendChild(dots); //id가 slider2인 태그 자식(하위)로 dots를 붙임
+
