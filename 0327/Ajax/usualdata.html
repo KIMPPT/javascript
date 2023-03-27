@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공공데이터</title>
 </head>
+
 <body>
     <h1>공공데이터 사용하기</h1>
+    <button id="data">데이터 가져오기</button>
+    <!--데이터 버튼을 눌렸을 때 data-list에 식당이름과 메뉴 10개 출력하기-->
+    <ul id="datalist">
+    </ul>
     <script>
         //fetch-async-awake 사용
-        async function getPublicData()
-        {
+        async function getPublicData() {
             //fatch()안에 주소 넣기
             //공공데이터의 주소에 서비스키와 관련정보를 이름=값&이름=값 과 같이 넣어서 요청 할 수 있다.
             //모든 공공데이터의 규칙이 같지는 않으므로 반드시 API정의서 확인
-            let promise=await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=visqlVyV5VIOGVgNswzp3XoFYPXiaCBh40hdIWnK5AAhTN01GbYZKV4WvQJyEQiu&pageNo=4");
+            let promise = await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=visqlVyV5VIOGVgNswzp3XoFYPXiaCBh40hdIWnK5AAhTN01GbYZKV4WvQJyEQiu&pageNo=4");
             console.log(promise); //response형태로 값을 받아옴
-            let response=await promise.json(); //json인 html 형식으로 바꿈
+            let response = await promise.json(); //json인 html 형식으로 바꿈
             console.log(response.body[0]);
+            console.log(response.body[0].MENU_NM);
+            console.log(response.body[0].RSTR_NM);
+
+            //가져온 데이터를 append를 이용하여 출력
+            //h3 : 식당이름
+            //p : 메뉴이름
+            let h3 = document.createElement("h3");
+            let p = document.createElement("p");
+            h3.innerHTML = response.body[0].RSTR_NM;
+            p.innerHTML = response.body[0].MENU_NM;
+            let body = document.querySelector("body");
+            body.appendChild(h3);
+            body.appendChild(p);
         }
         getPublicData();
+        let count = 0;
+        let data = "";
+        //count값은 전역변수로 써야함[지역변수에 쓰면 초기화도 반복함. 함수가 끝나고 값이 유저되어야함]
+        let button = document.querySelector("#data");
+        button.addEventListener("click",
+            async () => {
+                let promise = await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=visqlVyV5VIOGVgNswzp3XoFYPXiaCBh40hdIWnK5AAhTN01GbYZKV4WvQJyEQiu&pageNo=2");
+                let response = await promise.json(); //json인 html 형식으로 바꿈
+                //전역변수에 response값을 저장해서 전달가능
+                data = response;
+                //0부터 9까지 인덱스 출력
+                //1. 반복문을 통해 작성
+                let ul = document.querySelector("#datalist");
+                //i값을 통해서 인덱스의 위치 접근
+                //i값을 10씩 증가해서 찾으면 다른 값을 가져 올 수 있다.
+                //클릭횟수에 따라 증가함[1번=0~9, 2번=10~19, 3번=20~29 ...]
+                //i의 값은 10*클릭횟수,i<10*(클릭횟수+1)
+                for (let i = 10 * count; i <= 10 * (count + 1); i++) {
+                    //2. 반복문 안에서 태그 생성,추가
+                    let li = document.createElement("li");
+                    li.innerHTML = `${response.body[i].RSTR_NM}-${response.body[i].MENU_NM}`;
+                    ul.appendChild(li);
+                }
+                //출력 후 count 증가
+                count++;
+            }
+        );
     </script>
 </body>
+
 </html>
