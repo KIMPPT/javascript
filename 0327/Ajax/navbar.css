@@ -10,13 +10,37 @@ ul
     display:flex;
     justify-content: space-between;
     padding:10px 20px;
+    background-color: aqua;
+    text-align:center;
 }
 .nav
 {
     width:500px;
+    background-color: beige;
 }
 .nav>ul
 {
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-between;
+}
+.name>ul{
+    opacity:0;
+    width:80px;
+}
+.name:hover>ul{
+    opacity:1;
+    transition:all 1s;
+}
+.name>ul{
+    background-color: blueviolet;
+}
+.name>ul>li:hover{
+    font-weight:bold;
+    border-bottom:1px black solid;
+}
+.name>ul>li
+{
+    border-bottom:1px transparent solid;
+    margin:2px 0;
+    box-sizing:border-box;
 }
