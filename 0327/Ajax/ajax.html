@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax</title>
 </head>
+
 <body>
     <h1>Ajax 실행</h1>
+    <p>비동기 자바스크립트</p>
     <h3>기본 브라우저 실행</h3>
     <ol>
         <li>이벤트 발생1</li>
@@ -22,5 +25,113 @@
         <li>서버에서 Ajax 요청 처리</li>
         <li>데이터를 가져와서 웹페이지 일부분 로딩</li>
     </ol>
+    <h2>a태그를 이용한 값 가져오기-기본브라우저 실행</h2>
+    <a href="./data.txt">text값</a>
+    <h2>Ajax를 이용한 값 가져오기</h2>
+    <button id="Ajax-btn">Ajax를 이용한 값</button>
+    <p id="Ajax-text"></p>
+    <h2>웹에서 값을 가져오는 형태 : JSON</h2>
+    <p>자바스크립트의 객체와 동일한 모양을 하고 있고 웹에서 값을 전달 할 때 사용하게 된다.</p>
+    <h3>a 태그로 들고온 JSON</h3>
+    <a href="./data.json">JSON 값</a>
+    <h3>Ajax를 이용하여 들고온 JSON</h3>
+    <button id="Ajax-JSON">Ajax-JSON</button>
+    <p id="Ajax-JSONP">클릭하면 홍길동 으로 바뀝니다</p>
+    <script>
+        //버튼을 눌렸을 때 Ajax 실행
+        //Ajax가 실행되는 순서
+
+        //HTTP 요청하기 위한 객체 생성
+        let request = new XMLHttpRequest();
+        //객체 확인,response로 받아오는값 확인
+        console.dir(request);
+        //readyState 를 통해서 순서를 확인 할 수 있다.
+        console.log(request.readyState);
+        //서버에 요청
+        request.open("GET", "./data.txt");
+        //서버에 전송
+        request.send();
+        //응답확인 >서버에 요청을 전송하고 바로 실행하면 값이 없다. 서버에 요청전송하고 값을 받아오는데 시간이 걸리기 때문
+        //값을 바로 받ㅇ오지 않고 값이 있을 때 response 실행
+        console.log(request.response);
+
+        //onreadystatechange : 함수를 수정해서 사용
+        //readystate의 값이 바뀔때마다 실행될 내용 작성
+        request.onreadystatechange = function () {   //this는 request객체를 가져옴
+            console.log("객체상태 : " + this.readyState);
+            console.log("응답번호 : " + this.status);
+            //객체상태가 4, 응답번호가 200일 때 값 호출
+            if (this.readyState == 4 && this.status == 200)
+                console.log("값 : " + this.response);
+        }
+        //버튼 객체를 들고와서 이벤트 작성
+        //클릭이벤트가 발생했을 때 Ajax 실행
+        let Ajaxbtn = document.querySelector("#Ajax-btn");
+        Ajaxbtn.addEventListener("click", function () {
+            /*작성 한 후 버튼을 클릭해서 확인*/
+            //XMLHTTPS객체 생성
+            let btn = new XMLHttpRequest();
+            //서버요청 : "./data.txt"
+            btn.open("GET", "./data.txt");
+            //요청 전송
+            btn.send();
+            //onreadystatechange를 이용하여 값 확인
+            btn.onreadystatechange = function () {
+                console.log(this.readyState);
+                if (this.response != "")
+                    console.log(`들고온 값 : ${this.response}`); //타입 : string으로 들고옴
+                console.log("타입 : " + typeof (this.response));
+                //값을 DOM에 넣어서 사용가능
+                let Ajaxtext = document.querySelector("#Ajax-text");
+                Ajaxtext.innerHTML = this.response;
+            }
+        });
+        //버튼을 클릭했을 때 Ajax를 이용하여 JSON 데이터 가져오기
+        let ajaxbtn2 = document.querySelector("#Ajax-JSON");
+        ajaxbtn2.addEventListener("click", function () {
+            //XMLHttpsRequest객체 생성
+            let req = new XMLHttpRequest();
+            //data.json 받기
+            req.open("GET", "./data.json");
+            //서버 요청
+            req.send();
+            //출력확인
+            req.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("JSON값 : " + req.response);
+                    //req.response로 받아온 값은 항상 문자열이기 때문에 JSON으로 받아온 값은 메소드를 통해 변환해서 사용
+                    console.log(typeof (req.response));
+                }
+                //JSON.parse를 통해 문자열에서 JSON(자바스크립트 객체)를 가져 올 수 있음
+                let data = JSON.parse(req.response);
+                console.log(data);
+                console.log(typeof(data));
+                //JS의 객체로 가져올 경우 .을 통해 그 안에 있는 값을 원해 자료형으로 들고 올 수 있다.
+                console.log(data.id);
+                console.log(data.text);
+                console.log(data.list); //pop은 배열에서 마지막 값을 불러줌
+                console.log(data.object);
+            };
+
+        })
+        //실습
+        //id가 Ajax-JSONP인 p태그에 "홍길동"을 출력하기
+        let ajax3=document.querySelector("#Ajax-JSONP");
+        ajax3.addEventListener("click",function()
+        {
+            let req=new XMLHttpRequest();
+            req.open("GET","./data.json");
+            req.send();
+            req.onreadystatechange=function()
+            {
+                if(this.readyState==4 && this.status==200)
+                {
+                    let data=JSON.parse(req.response);
+                    ajax3.innerHTML=data.object.name;
+                }
+            }
+        })
+    </script>
 </body>
+
 </html>

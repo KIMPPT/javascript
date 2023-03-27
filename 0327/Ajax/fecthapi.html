@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch API를 이용한 Ajax</h1>
+    <p>HTTP객체를 생성하는 대신에 Fetch API 를 통해 접근</p>
+    <script>
+        //fetchAPI를 이용해서 접근
+        fetch('./data.txt')
+        //then 안에 함수를 이용해서 response 접근
+        .then( function(response){
+            //response의 안에 http 값이 들어가 있음
+            console.log(response);
+            return response.text();
+        })
+        //다음 then은 이전 then의 return 값을 전달받기에 return=response.text()를 이용해서 값 전달
+        .then(function(text){
+            //then을 2번 쓰느 ㄴ이유
+            //처음의 then에서 promise로 만들어졌기 때문에 그 값을 사용하기 위해 한번 더 then을 사용
+            console.log(text);
+        })
+        console.log("fetch 이전에 작성된 내용입니다.");
+        //Fetch API는 비동기 이므로 실행 후 값을 바로 가져오지 않는다.
+        //Fetch API 화살표 함수로 간단하게 사용
+        fetch("./data.txt")
+        .then(promise=>promise.text())
+        .then(response=>console.log(response))
+        console.log("fetch 이후에 작성된 내용입니다.");
+
+        //Fetch API를 통해서 data1.txt 파일을 가져와서 콘솔에 출력
+        fetch("./data1.txt")
+        .then(promise=>promise.text())
+        .then(response=>console.log(response))
+    </script>
+</body>
+</html>
