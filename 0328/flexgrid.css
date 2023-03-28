@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex>div {
+    padding: 10px 10px;
+    margin: 20px 20px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid>div {
+    margin: 20px 20px;
+    padding: 10px 10px;
+    background-color: aqua;
+    border: 1px solid black;
+}
