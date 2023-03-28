@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 버블링</title>
+</head>
+
+<body>
+    <h1>이벤트 전파-버블링</h1>
+    <p>한 요소에 이벤트가 발생하면, 이 요소에 할당된 핸들러가 동작하고, 이어서 부모 요소의 핸들러가 동작함</p>
+    <p>가장 최상단의 조상 요소를 만날 때까지 이 과정이 반복되면서 요소 각각에 할당된 핸들러가 동작함</p>
+    <p>하위 태그의 이벤트가 발생했을 때 상위태그의 이벤트가 실행</p>
+    <div id="divevent" style="height:100px;background-color: aqua;">
+        <p id="pevent">p태그입니다
+            <span id="spanevent">span태그입니다</span>
+        </p>
+    </div>
+    <script>
+        let divevent=document.querySelector("#divevent");
+        let pevent=document.querySelector("#pevent");
+        let spanevent=document.querySelector("#spanevent");
+        //이벤트가 실행되었을 때 실행된 이벤트 타겟 이름 출력
+        function printtag(e)
+        {
+            e.stopPropagation();//이벤트 버를링 제거
+            console.log(e.target);
+            console.log(e.currentTarget);
+            //이벤트 리스너를 가진 요소
+        }
+        divevent.addEventListener("click",printtag);
+        //div 태그는 상위가 없으므로 1번만 출력
+        pevent.addEventListener("click",printtag);
+        //p 태그는 상위 태그가 div 1개가 존재하므로 1번 더인 2번 출력
+        spanevent.addEventListener("click",printtag);
+        //span 태그는 상위 태그가 p이고 p의 상위인 div 즉, 2개가 존재하므로 3개 출력
+    </script>
+</body>
+
+</html>
