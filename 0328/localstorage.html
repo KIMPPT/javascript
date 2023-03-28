@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스토리지(storage)</title>
+</head>
+<body>
+    <h1>local storage(로컬 스토리지)</h1>
+    <p>브라우저 안에 값을 저장하는 공간</p>
+    <p>개발자 도구(F12)-Application-Storage-Local Storage</p>
+    <script>
+        //localStrage객체에 접근해서 사용
+        localStorage.setItem("key",1);
+        //키를 통해서 값 가져오기
+        console.log(localStorage.getItem("key"));
+        console.log(typeof(localStorage.getItem("key")));
+        //키를 통해 값 삭제하기
+        //localStorage.removeItem("key");
+        //키에 들어간 값을 자료형을 살려서 사용하기
+        //형변환
+        let num=localStorage.getItem("key");
+        console.log(num);//value값이 1이지만 무조건 문자열로 들어가있어서 문자열로 나옴
+        console.log(Number(num));//Number 로 형변환을 시킴
+        //키에 객체를 넣어서 사용하기
+        //객체는 문자열로 반환되지 않기 때문에 바꾸어서 넣어줘야 한다-JSON.stringify
+        let objectstring=JSON.stringify({id:1});
+        localStorage.setItem("object",objectstring);
+        //출력은 문자열로 나옴
+        //문자열을 객체로 전환해서 사용-JSON.parse
+        console.log(localStorage.getItem("object"));
+        let id=JSON.parse(localStorage.getItem("object"));
+        console.log(id);
+    </script>
+
+</body>
+</html>
